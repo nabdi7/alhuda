@@ -118,7 +118,7 @@ const Events = () => {
 
   return (
     <section className="bg-gray-100 py-12">
-      <div className="flex max-w-7xl mx-auto gap-8 p-6 ">
+      <div className="flex flex-col md:flex-row max-w-7xl mx-auto gap-8 p-6 ">
         {/* Calendar Section */}
         <div className="flex-1 bg-white rounded-lg shadow-sm p-6">
           <div className="flex items-center justify-between mb-8">
@@ -189,11 +189,11 @@ const Events = () => {
         </div>
 
         {/* Events Section */}
-        <div className="w-96 bg-green-700 text-white p-6 rounded-lg">
-          <h3 className="text-lg font-semibold mb-6 text-center">
+        <div className="w-full md:w-96 bg-green-700 text-white p-6 rounded-lg">
+          <h3 className="text-lg font-semibold mb-6 ">
             EVENTS FOR {months[currentMonth.getMonth()].toUpperCase()}
           </h3>
-          <div className="inline-block border border-white px-3 py-1 mb-8">
+          <div className="inline-block border border-white px-3 py-1 mb-8 ">
             {selectedDate}th
           </div>
 

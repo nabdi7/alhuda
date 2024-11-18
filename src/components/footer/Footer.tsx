@@ -14,8 +14,7 @@ const Footer = () => {
   const usefulLinks = [
     { name: "Prayer Times", href: "/prayer" },
     { name: "Events Calendar", href: "/events" },
-    { name: "Education", href: "/education" },
-    { name: "Community", href: "/community" },
+    { name: "Islamic School", href: "/islamic-school" },
     { name: "Donate", href: "/donate" },
   ];
 
@@ -101,6 +100,16 @@ const Footer = () => {
           <p className="text-center text-sm text-gray-500">
             © {new Date().getFullYear()} Alhuda Islamic Center. All rights
             reserved.
+          </p>
+          {/* made by */}
+          <p className="text-center text-sm text-gray-500">
+            Made by{" "}
+            <a
+              href="https://www.qdwebdesigns.com"
+              className="text-green-600 hover:underline"
+            >
+              QD Web Designs
+            </a>
           </p>
         </div>
       </div>

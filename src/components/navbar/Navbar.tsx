@@ -15,11 +15,10 @@ const Navbar = () => {
   ];
 
   const services = [
-    { name: "Marriage Services", href: "/marriage" },
-    { name: "Funeral Services", href: "/funeral" },
+    { name: "Weekend Islamic School", href: "/islamic-school" },
+    { name: "Marriage Services", href: "/marriage-service" },
+    { name: "Funeral Services", href: "/funeral-service" },
     { name: "Community Support", href: "/community" },
-    { name: "Islamic Education", href: "/education" },
-    { name: "Quran Classes", href: "/quran" },
   ];
 
   return (
