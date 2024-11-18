@@ -1,0 +1,22 @@
+{
+    "events": [
+      {
+        "type": "weekly",
+        "dayOfWeek": 5,
+        "time": "1:00 pm - 2:00 pm",
+        "title": "FRIDAY PRAYER"
+      },
+      {
+        "type": "weekly",
+        "dayOfWeek": 6,
+        "time": "9:30 am - 12:30 pm",
+        "title": "WEEKEND ISLAMIC SCHOOL SESSION 1"
+      },
+      {
+        "type": "weekly",
+        "dayOfWeek": 6,
+        "time": "12:45 pm - 3:45 pm",
+        "title": "WEEKEND ISLAMIC SCHOOL SESSION 2"
+      }
+    ]
+  }

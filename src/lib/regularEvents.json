@@ -1,0 +1,22 @@
+{
+    "events": {
+      "2024": {
+        "1": {  
+          "15": [
+            {
+              "time": "6:00 pm - 7:30 pm",
+              "title": "ELEMENTARY ARABIC"
+            }
+          ]
+        },
+        "2": {  
+          "5": [
+            {
+              "time": "7:00 pm - 8:30 pm",
+              "title": "ISLAMIC HISTORY LECTURE"
+            }
+          ]
+        }
+      }
+    }
+  }
