@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap-image/1.1">
+    <url>
+        <loc>https://alhudaislamiccenter.com</loc>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://alhudaislamiccenter.com/about</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://alhudaislamiccenter.com/donate</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://alhudaislamiccenter.com/contact</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://alhudaislamiccenter.com/islamic-school</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://alhudaislamiccenter.com/prayer</loc>
+        <priority>0.8</priority>
+    </url>
+</urlset>
