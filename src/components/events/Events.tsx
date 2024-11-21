@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import recurringEventsData from "../../lib/recurringEvents.json";
 import regularEventsData from "../../lib/regularEvents.json";
-
+import PageHeader from "../header/PageHeader";
 const Events = () => {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(new Date().getDate());
@@ -117,6 +117,8 @@ const Events = () => {
   );
 
   return (
+    <>
+    <PageHeader title="Events" breadcrumb="Events" />
     <section className="bg-gray-100 py-12">
       <div className="flex flex-col md:flex-row max-w-7xl mx-auto gap-8 p-6 ">
         {/* Calendar Section */}
@@ -221,7 +223,18 @@ const Events = () => {
           )}
         </div>
       </div>
+
+      {/* upcoming events */}
+
+
+
+      {/* ongoing events */}
+
+
+
     </section>
+
+    </>
   );
 };
 

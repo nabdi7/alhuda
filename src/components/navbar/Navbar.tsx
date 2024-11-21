@@ -10,15 +10,22 @@ const Navbar = () => {
 
   const pages = [
     { name: "About Us", href: "/about" },
+    { name: "Imam's Message", href: "/" },
     { name: "Our Scholars", href: "/scholars" },
-    { name: "Blog", href: "/blog" },
+    { name: "New to Islam", href: "/new-to-islam" },
   ];
 
   const services = [
-    { name: "Weekend Islamic School", href: "/islamic-school" },
     { name: "Marriage Services", href: "/marriage-service" },
     { name: "Funeral Services", href: "/funeral-service" },
     { name: "Community Support", href: "/community" },
+  ];
+
+  // programs
+  const programs = [
+    { name: "Weekend Islamic School", href: "/islamic-school" },
+    // { name: "Men's Halaqah", href: "/mens-halaqah" },
+    // { name: "Women's Halaqah", href: "/womens-halaqah" },
   ];
 
   return (
@@ -44,7 +51,7 @@ const Navbar = () => {
               {/* Pages Dropdown */}
               <div className="relative group">
                 <button className="text-gray-700 group inline-flex items-center px-3 py-2 text-sm font-medium hover:text-green-600">
-                  <span>Our Center</span>
+                  <span>Our Masjid</span>
                   <ChevronDown className="ml-2 h-4 w-4" />
                 </button>
 
@@ -79,6 +86,28 @@ const Navbar = () => {
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600"
                       >
                         {service.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Programs Dropdown */}
+              <div className="relative group">
+                <button className="text-gray-700 group inline-flex items-center px-3 py-2 text-sm font-medium hover:text-green-600">
+                  <span>Programs</span>
+                  <ChevronDown className="ml-2 h-4 w-4" />
+                </button>
+
+                <div className="invisible group-hover:visible absolute z-10 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <div className="py-1">
+                    {programs.map((program) => (
+                      <Link
+                        key={program.name}
+                        href={program.href}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600"
+                      >
+                        {program.name}
                       </Link>
                     ))}
                   </div>
@@ -132,6 +161,7 @@ const Navbar = () => {
         isOpen={isOpen}
         services={services}
         pages={pages}
+        programs={programs}
         onClose={() => setIsOpen(false)}
       />
     </nav>

@@ -5,19 +5,22 @@ import Link from "next/link";
 
 interface MobileMenuProps {
   isOpen: boolean;
-  services: { name: string; href: string }[];
   pages: { name: string; href: string }[];
+  services: { name: string; href: string }[];
+  programs: { name: string; href: string }[];
   onClose: () => void;
 }
 
 const MobileMenu: React.FC<MobileMenuProps> = ({
   isOpen,
-  services,
   pages,
+  services,
+  programs,
   onClose,
 }) => {
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isPagesOpen, setIsPagesOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isProgramsOpen, setIsProgramsOpen] = useState(false);
 
   return (
     <>
@@ -109,7 +112,44 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
                 ))}
               </div>
             </div>
+            
+            <div className="relative">
+              <button
+                onClick={() => setIsProgramsOpen(!isProgramsOpen)}
+                className="w-full flex justify-between items-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 hover:bg-green-50"
+              >
+                <span>Programs</span>
+                <ChevronDown
+                  className={`h-4 w-4 transform ${
+                    isProgramsOpen ? "rotate-180" : ""
+                  } transition-transform duration-200`}
+                />
+              </button>
+              <div
+                className={`pl-4 overflow-hidden transition-all duration-200 ease-in-out ${
+                  isProgramsOpen ? "max-h-96" : "max-h-0"
+                }`}
+              >
+                {programs.map((program) => (
+                  <Link
+                    key={program.name}
+                    href={program.href}
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 hover:bg-green-50"
+                    onClick={onClose}
+                  >
+                    {program.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
 
+            <Link
+              href="/prayer"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 hover:bg-green-50"
+              onClick={onClose}
+            >
+              Prayer Times
+            </Link>
             <Link
               href="/events"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 hover:bg-green-50"

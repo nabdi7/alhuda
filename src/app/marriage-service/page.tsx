@@ -1,5 +1,5 @@
 import React from "react";
-// import Events from "@/components/events/Events";
+import Marriage from "@/components/services/Marriage";
 
 export const metadata = {
   title: "Marriage Service | Alhuda Islamic Center",
@@ -14,7 +14,7 @@ export const metadata = {
   },
   twitter: {
     title: "Marriage Service | Alhuda Islamic Center",
-    description:
+    description: 
       "",
   },
 };
@@ -22,7 +22,7 @@ export const metadata = {
 const page = () => {
   return (
     <div>
-      <h1>Marriage</h1>
+      <Marriage />
     </div>
   ); 
 };

@@ -24,7 +24,7 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
         {/* Left Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="space-y-6 pt-8">
@@ -32,16 +32,22 @@ const Hero = () => {
               Alhuda Islamic Center of Kent
             </h1>
             <p className="text-lg text-gray-600 max-w-xl">
-              Join our vibrant community and embark on a journey of spiritual
-              growth, learning, and understanding. Discover the beauty of
-              Islamic teachings and traditions.
+              A welcoming space for prayer, learning, and building connections.
+              Explore opportunities to grow spiritually, deepen your
+              understanding of Islam, and contribute to a supportive community.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/prayer" className="flex items-center gap-2 bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-800 transition-colors">
+              <Link
+                href="/prayer"
+                className="flex items-center gap-2 bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-800 transition-colors"
+              >
                 Prayer Times
                 <ChevronRight className="w-4 h-4" />
               </Link>
-              <Link href="/donate" className="flex items-center gap-2 border-2 border-green-700 text-green-700 px-6 py-3 rounded-lg hover:bg-green-50 transition-colors">
+              <Link
+                href="/donate"
+                className="flex items-center gap-2 border-2 border-green-700 text-green-700 px-6 py-3 rounded-lg hover:bg-green-50 transition-colors"
+              >
                 Donate
               </Link>
             </div>
@@ -66,9 +72,7 @@ const Hero = () => {
               </div>
               <div>
                 <h3 className="font-bold text-gray-900">Quran Classes</h3>
-                <p className="text-sm text-gray-600">
-                  Daily Sessions Available
-                </p>
+                <p className="text-sm text-gray-600">Weekend Islamic School</p>
               </div>
             </div>
 
