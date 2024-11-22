@@ -9,6 +9,7 @@ import {
   Search,
   Filter,
 } from "lucide-react";
+import PageHeader from "../header/PageHeader";
 
 const Scholars = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -244,21 +245,7 @@ const Scholars = () => {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-green-50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl font-serif font-bold text-gray-900 mb-4">
-              Our Team
-            </h1>
-          </div>
-        </div>
-      </section>
-
-      {/* <section className="bg-green-50 py-16">
-      <PageHeader title="Our Team" breadcrumb="Team" />
-      </section> */}
-
+      <PageHeader title="Our Team" breadcrumb="Our Team" />
       {/* Global Search and Filter */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row gap-4 items-center justify-between">

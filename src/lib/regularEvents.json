@@ -5,7 +5,8 @@
           "15": [
             {
               "time": "6:00 pm - 7:30 pm",
-              "title": "ELEMENTARY ARABIC"
+              "title": "ELEMENTARY ARABIC",
+              "image": "/abdirahin.JPG"
             }
           ]
         },
@@ -13,7 +14,60 @@
           "5": [
             {
               "time": "7:00 pm - 8:30 pm",
-              "title": "ISLAMIC HISTORY LECTURE"
+              "title": "ISLAMIC HISTORY LECTURE",
+              "image": "/abdirahin.JPG"
+            }
+          ]
+        },
+        "11": {
+          "15": [
+            {
+              "time": "6:00 pm - 7:30 pm",
+              "title": "Testing November",
+              "image": "/abdirahin.JPG"
+            }
+          ],
+          "21": [
+            {
+              "time": "6:00 pm - 7:30 pm",
+              "title": "Testing November T",
+              "image": "/abdirahin.JPG"
+            }
+          ],
+          "24": [
+            {
+              "time": "6:00 pm - 7:30 pm",
+              "title": "Testing November",
+              "image": "/abdirahin.JPG"
+            }
+          ]
+        },
+        "12": {  
+          "12": [
+            {
+              "time": "7:00 pm - 8:30 pm",
+              "title": "ISLAMIC HISTORY LECTURE",
+              "image": "/abdirahin.JPG"
+            }
+          ]
+        }
+      },
+      "2025": {
+        "1": {  
+          "15": [
+            {
+              "time": "6:00 pm - 7:30 pm",
+              "title": "ELEMENTARY ARABIC",
+              "image": "/abdirahin.JPG"
+            }
+          ]
+        },
+        "2": {  
+          "5": [
+            {
+              "time": "7:00 pm - 8:30 pm",
+              "title": "ISLAMIC HISTORY LECTURE",
+              "image": "/abdirahin.JPG"
             }
           ]
         }

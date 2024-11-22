@@ -4,19 +4,22 @@
         "type": "weekly",
         "dayOfWeek": 5,
         "time": "1:00 pm - 2:00 pm",
-        "title": "FRIDAY PRAYER"
+        "title": "FRIDAY PRAYER",
+        "image": "/najib.jpg"
       },
       {
         "type": "weekly",
         "dayOfWeek": 6,
         "time": "9:30 am - 12:30 pm",
-        "title": "WEEKEND ISLAMIC SCHOOL SESSION 1"
+        "title": "WEEKEND ISLAMIC SCHOOL SESSION 1",
+        "image": "/najib.jpg"
       },
       {
         "type": "weekly",
         "dayOfWeek": 6,
         "time": "12:45 pm - 3:45 pm",
-        "title": "WEEKEND ISLAMIC SCHOOL SESSION 2"
+        "title": "WEEKEND ISLAMIC SCHOOL SESSION 2",
+        "image": "/najib.jpg"
       }
     ]
   }

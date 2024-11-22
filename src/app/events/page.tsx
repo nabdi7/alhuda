@@ -1,5 +1,5 @@
 import React from "react";
-import Events from "@/components/events/Events";
+import EventsPage from "@/components/events/EventsPage";
 
 export const metadata = {
   title: "Events | Alhuda Islamic Center",
@@ -22,7 +22,7 @@ export const metadata = {
 const page = () => {
   return (
     <div>
-      <Events />
+      <EventsPage />
     </div>
   ); 
 };
