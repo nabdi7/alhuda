@@ -220,15 +220,6 @@ const Events = () => {
           )}
         </div>
       </div>
-
-      {/* upcoming events */}
-
-
-
-      {/* ongoing events */}
-
-
-
     </section>
   );
 };
