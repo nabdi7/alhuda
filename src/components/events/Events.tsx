@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import recurringEventsData from "../../lib/recurringEvents.json";
 import regularEventsData from "../../lib/regularEvents.json";
+
 const Events = () => {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(new Date().getDate());
@@ -42,7 +43,6 @@ const Events = () => {
     const month = date.getMonth();
     const days = new Date(year, month + 1, 0).getDate();
     const firstDay = new Date(year, month, 1).getDay();
-
     const mondayBasedFirstDay = firstDay === 0 ? 7 : firstDay;
 
     const daysArray = [];
@@ -71,11 +71,9 @@ const Events = () => {
 
     const events = [];
 
-    // Get regular events for the specific date
     const regularEvents = getRegularEvents(date);
     events.push(...regularEvents);
 
-    // Check recurring events
     recurringEventsData.events.forEach((event) => {
       if (event.type === "weekly") {
         const mondayBasedDay = date.getDay() === 0 ? 7 : date.getDay();
@@ -110,14 +108,13 @@ const Events = () => {
     }
   };
 
-  // Get events for selected date
   const selectedDateEvents = getEventsForDate(
     new Date(currentMonth.getFullYear(), currentMonth.getMonth(), selectedDate)
   );
 
   return (
     <section className="bg-gray-100 py-12">
-      <div className="flex flex-col md:flex-row max-w-7xl mx-auto gap-8 p-6 ">
+      <div className="flex flex-col md:flex-row max-w-7xl mx-auto gap-4 p-6">
         {/* Calendar Section */}
         <div className="flex-1 bg-white rounded-lg shadow-sm p-6">
           <div className="flex items-center justify-between mb-8">
@@ -158,29 +155,56 @@ const Events = () => {
                 <button
                   key={index}
                   onClick={() => handleDateSelect(day)}
-                  className={`h-10 flex items-center justify-center relative 
-                  ${
-                    day.currentMonth
-                      ? "hover:bg-green-700"
-                      : "pointer-events-none"
-                  }
-                  ${day.currentMonth ? "text-gray-900" : "text-gray-400"}
-                  ${
-                    selectedDate === day.day && day.currentMonth
-                      ? "bg-green-700"
-                      : ""
-                  }
-                  rounded-md transition-colors`}
-                >
-                  <span className="relative z-10">{day.day}</span>
-                  {dayEvents.length > 0 && day.currentMonth && (
-                    <div
-                      className={`w-2 h-2 rounded-full absolute -bottom-1
+                  className={`min-h-[40px] md:min-h-[80px] p-1 relative border rounded-md text-left
+                    ${day.currentMonth ? "hover:bg-green-50" : "bg-gray-50"}
+                    ${day.currentMonth ? "" : "pointer-events-none"}
                     ${
-                      selectedDate === day.day ? "bg-green-700" : "bg-green-700"
-                    }`}
-                    />
-                  )}
+                      selectedDate === day.day && day.currentMonth
+                        ? "border-green-700"
+                        : "border-gray-200"
+                    }
+                  `}
+                >
+                  <span
+                    className={`absolute top-1 right-1 w-6 h-6 flex items-center justify-center text-sm rounded-full
+                      ${day.currentMonth ? "text-gray-700" : "text-gray-400"}
+                      ${
+                        selectedDate === day.day && day.currentMonth
+                          ? "bg-green-700 text-white"
+                          : ""
+                      }
+                    `}
+                  >
+                    {day.day}
+                  </span>
+                  {/* Show event dots on mobile, times on desktop */}
+                  <div className="mt-6 space-y-1">
+                    {day.currentMonth && dayEvents.length > 0 && (
+                      <>
+                        {/* Desktop view with times */}
+                        <div className="hidden md:block space-y-1">
+                          {dayEvents.map((event, eventIndex) => (
+                            <div
+                              key={eventIndex}
+                              className="bg-green-100 text-green-800 text-xs p-1 rounded truncate"
+                              title={`${event.time} - ${event.title}`}
+                            >
+                              {event.time}
+                            </div>
+                          ))}
+                        </div>
+                        {/* Mobile view with dots */}
+                        <div className="flex md:hidden gap-0.5 flex-wrap">
+                          {dayEvents.map((_, eventIndex) => (
+                            <div
+                              key={eventIndex}
+                              className="w-1.5 h-1.5 bg-green-500 rounded-full"
+                            />
+                          ))}
+                        </div>
+                      </>
+                    )}
+                  </div>
                 </button>
               );
             })}
@@ -189,10 +213,10 @@ const Events = () => {
 
         {/* Events Section */}
         <div className="w-full md:w-96 bg-green-700 text-white p-6 rounded-lg">
-          <h3 className="text-lg font-semibold mb-6 ">
+          <h3 className="text-lg font-semibold mb-6">
             EVENTS FOR {months[currentMonth.getMonth()].toUpperCase()}
           </h3>
-          <div className="inline-block border border-white px-3 py-1 mb-8 ">
+          <div className="inline-block border border-white px-3 py-1 mb-8">
             {selectedDate}th
           </div>
 
