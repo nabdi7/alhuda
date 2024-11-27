@@ -201,7 +201,7 @@ const Announcement = () => {
   };
 
   return (
-    <div className="bg-green-50">
+    <section className="py-24 bg-green-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex items-center gap-2 mb-6">
           <Megaphone className="h-6 w-6 text-green-700" />
@@ -256,7 +256,7 @@ const Announcement = () => {
           </div>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 

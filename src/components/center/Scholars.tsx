@@ -31,7 +31,6 @@ const Scholars = () => {
           email: "example@gmail.com",
           phone: "+1 (206) 390-6449",
           department: "leadership",
-          bio: "Leading with vision and dedication to serve our community.",
         },
         {
           name: "Sheikh Abdirahin",
@@ -43,7 +42,6 @@ const Scholars = () => {
           email: "example@gmail.com",
           phone: "+1 (206) 390-6449",
           department: "leadership",
-          bio: "Creating meaningful experiences through well-organized events.",
         },
         {
           name: "Sheikh Abdirahin2",
@@ -55,7 +53,6 @@ const Scholars = () => {
           email: "example@gmail.com",
           phone: "+1 (555) 789-0123",
           department: "leadership",
-          bio: "Empowering the next generation through education and mentorship.",
         },
         {
           name: "Sheikh Abdirahin",
@@ -67,7 +64,24 @@ const Scholars = () => {
           email: "example@gmail.com",
           phone: "+1 (206) 390-6449",
           department: "leadership",
-          bio: "Creating meaningful experiences through well-organized events.",
+        },
+      ],
+    },
+    imams: {
+      title: "Imams",
+      description:
+        "Our knowledgeable imams who lead our community in prayer and provide spiritual guidance.",
+      members: [
+        {
+          name: "Sarah Ahmed",
+          role: "Community Outreach",
+          image: "/abdirahin.JPG",
+          facebook: "#",
+          linkedin: "#",
+          instagram: "#",
+          email: "example@gmail.com",
+          phone: "+1 (555) 567-8901",
+          department: "imams",
         },
       ],
     },
@@ -86,7 +100,6 @@ const Scholars = () => {
           email: "example@gmail.com",
           phone: "+1 (555) 567-8901",
           department: "volunteers",
-          bio: "Passionate about connecting with and serving our community.",
         },
       ],
     },
@@ -105,7 +118,6 @@ const Scholars = () => {
           email: "abdinajka@gmail.com",
           phone: "+1 (206) 883-3462",
           department: "Tech Team",
-          bio: "Creating beautiful and intuitive digital experiences.",
           // url link
           linkUrl: "https://example.com/team/najib-abdi",
         },
@@ -190,10 +202,6 @@ const Scholars = () => {
                   </h3>
                   <p className="text-gray-600 mb-2">{member.role}</p>
 
-                  <p className="text-gray-600 text-sm text-center mb-4">
-                    {member.bio}
-                  </p>
-
                   <div className="flex flex-col items-center gap-2 mb-4">
                     <a
                       href={`mailto:${member.email}`}
@@ -245,38 +253,81 @@ const Scholars = () => {
 
   return (
     <>
-      <PageHeader title="Our Team" breadcrumb="Our Team" />
-      {/* Global Search and Filter */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-          <div className="relative w-full md:w-64">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-            <input
-              type="text"
-              placeholder="Search all members..."
-              className="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </div>
-          <div className="flex items-center gap-4">
-            <Filter className="text-gray-400 w-5 h-5" />
-            <select
-              className="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent"
-              value={filter}
-              onChange={(e) => setFilter(e.target.value)}
-            >
-              <option value="all">All Departments</option>
-              {allDepartments.map((dept) => (
-                <option key={dept} value={dept}>
-                  {dept.charAt(0).toUpperCase() + dept.slice(1)}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-      </div>
+      <section className="">
+        <PageHeader title="Our Team" breadcrumb="Our Team" />
 
+        {/* Global Search and Filter */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start pb-5">
+            <div className="flex flex-col items-start">
+              <img
+                src="/abdirahin.JPG"
+                alt="Dr. Yahya Suufi"
+                className="rounded-lg shadow-xl"
+              />
+              <h2 className="text-4xl font-serif font-bold text-gray-900 mt-6">
+                Dr. Ahmed Nuur
+              </h2>
+              <p className="text-green-600 font-medium">
+                Executive Director & Scholar
+              </p>
+            </div>
+            <div className="space-y-6">
+              <p className="text-gray-600">
+                Dr. Ahmed Nuur was born in Somalia where he completed
+                Memorization of the Holy Quran at the age of [9], as has been a
+                customary tradition in the upbringing of children in Somalia.
+                While he was a teenager, his family gained refugee status in the
+                United States due to the civil war raging in Somalia, and he and
+                his family were relocated to Seattle, Washington where - as one
+                of the few members of the local community who had memorized the
+                entire Quran - he was appointed to be the Imam of the Islamic
+                Center of Tacoma, although he was still in high school. During
+                this time he graduated from Stadium High School in Tacoma,
+                Washington.
+              </p>
+              <p className="text-gray-600">
+                After graduating from high school and having experienced
+                instances where he realized a need for a level of Islamic
+                understanding and knowledge he did not have, Dr. Ahmed Nuur
+                decided to seek Islamic knowledge and began advancing his
+                Islamic understanding by attending the Institute of Islamic and
+                Arabic Sciences (IIASA) in Fairfax, Virginia (a campus of the
+                Imam Muhammad Ibn Saud Islamic University in Riyadh, Saudi
+                Arabia) for 3 years.
+              </p>
+            </div>
+          </div>
+
+          {/* <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+            <div className="relative w-full md:w-64">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <input
+                type="text"
+                placeholder="Search all members..."
+                className="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+            <div className="flex items-center gap-4">
+              <Filter className="text-gray-400 w-5 h-5" />
+              <select
+                className="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                value={filter}
+                onChange={(e) => setFilter(e.target.value)}
+              >
+                <option value="all">All Departments</option>
+                {allDepartments.map((dept) => (
+                  <option key={dept} value={dept}>
+                    {dept.charAt(0).toUpperCase() + dept.slice(1)}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div> */}
+        </div>
+      </section>
       {/* Team Sections */}
       {Object.entries(teams).map(([key, { title, description, members }]) => (
         <TeamSection

@@ -3,7 +3,7 @@ import { Home, Heart, BookOpen, Users } from "lucide-react";
 import PageHeader from "@/components/header/PageHeader";
 const About = () => {
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <section className="bg-gray-50">
       <PageHeader title="About Us" breadcrumb="About" />
       {/* Mission Statement Section */}
       <section className="relative py-16">
@@ -117,10 +117,7 @@ const About = () => {
       {/* Vision for Future Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-serif font-bold text-gray-900 mb-8 text-center">
-            Our Vision for the Future
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <div className="w-full h-[300px] rounded-lg overflow-hidden shadow-lg">
                 <img
@@ -132,6 +129,9 @@ const About = () => {
               <div className="absolute -top-4 -right-4 w-32 h-32 bg-green-100 rounded-full opacity-50" />
             </div>
             <div className="space-y-4 text-gray-600">
+              <h2 className="text-3xl font-serif font-bold text-gray-900 mb-8">
+                Our Vision for the Future
+              </h2>
               <p>
                 As we look to the future, Alhuda Islamic Center envisions
                 expanding our impact through innovative programs and facilities
@@ -152,7 +152,7 @@ const About = () => {
           </div>
         </div>
       </section>
-    </div>
+    </section>
   );
 };
 

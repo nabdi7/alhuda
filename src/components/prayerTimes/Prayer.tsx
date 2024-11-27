@@ -123,7 +123,7 @@ const PrayerTimes = () => {
   };
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="w-full bg-white shadow-lg rounded-xl overflow-hidden border border-gray-200">
           <div className="p-6 bg-gradient-to-r from-green-500 to-green-600 text-center">

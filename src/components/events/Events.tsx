@@ -113,7 +113,7 @@ const Events = () => {
   );
 
   return (
-    <section className="bg-gray-100 py-12">
+    <section className="bg-gray-100 py-24">
       <div className="flex flex-col md:flex-row max-w-7xl mx-auto gap-4 p-6">
         {/* Calendar Section */}
         <div className="flex-1 bg-white rounded-lg shadow-sm p-6">

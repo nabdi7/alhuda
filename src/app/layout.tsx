@@ -7,7 +7,7 @@ import Footer from "@/components/footer/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "AlHuda Islamic Center",
+  title: "AlHuda Islamic Center of Kent, WA",
   description: "AlHuda Islamic Center is a mosque in the heart of Kent WA.",
 };
 
