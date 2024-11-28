@@ -3,12 +3,12 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import PageHeader from "../header/PageHeader";
 const Contact = () => {
   return (
-    <div className="bg-gray-50 min-h-screen ">
+    <section className="bg-gray-50">
       <PageHeader title="Contact Us" breadcrumb="Contact" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Contact Info */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+          <div className="bg-white rounded-2xl shadow-lg p-6 transform transition-all duration-300 text-center">
             <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
               <Phone className="w-6 h-6 text-green-700" />
             </div>
@@ -16,7 +16,7 @@ const Contact = () => {
             <p className="text-gray-600">(253) 632-2310</p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+          <div className="bg-white rounded-2xl shadow-lg p-6 transform transition-all duration-300 text-center">
             <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
               <Mail className="w-6 h-6 text-green-700" />
             </div>
@@ -24,7 +24,7 @@ const Contact = () => {
             <p className="text-gray-600">info@alhudakent.org</p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+          <div className="bg-white rounded-2xl shadow-lg p-6 transform transition-all duration-300 text-center">
             <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
               <MapPin className="w-6 h-6 text-green-700" />
             </div>
@@ -35,8 +35,8 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Contact Form */}
-          <div className="space-y-6">
-            <form className="space-y-6">
+          <div className="bg-white rounded-2xl shadow-lg p-6 transform transition-all duration-300 py-16 space-y-6">
+            <form className="space-y-6 ">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label
@@ -48,6 +48,7 @@ const Contact = () => {
                   <input
                     type="text"
                     id="firstName"
+                    required
                     className="w-full px-4 py-3 rounded-[24px] border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   />
                 </div>
@@ -62,6 +63,7 @@ const Contact = () => {
                   <input
                     type="text"
                     id="lastName"
+                    required
                     className="w-full px-4 py-3 rounded-[24px] border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   />
                 </div>
@@ -78,6 +80,7 @@ const Contact = () => {
                   <input
                     type="email"
                     id="email"
+                    required
                     className="w-full px-4 py-3 rounded-[24px] border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   />
                 </div>
@@ -92,6 +95,7 @@ const Contact = () => {
                   <input
                     type="tel"
                     id="phone"
+                    required
                     className="w-full px-4 py-3 rounded-[24px] border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   />
                 </div>
@@ -108,6 +112,7 @@ const Contact = () => {
                   id="message"
                   rows={6}
                   placeholder="Type your message..."
+                  required
                   className="w-full px-4 py-3 rounded-[24px] border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 />
               </div>
@@ -135,7 +140,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

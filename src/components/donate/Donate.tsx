@@ -19,43 +19,47 @@ const PaymentMethodCard = ({ icon, title, qrCodeSrc, number }) => {
   };
 
   return (
-    <div className="bg-white border border-gray-200 rounded-2xl p-6 space-y-6 shadow-sm hover:shadow-md transition-all duration-300">
+    <div className="bg-white border border-gray-200 rounded-2xl p-4 space-y-4 shadow-sm hover:shadow-md transition-all duration-300">
       <div className="flex items-center space-x-4">
         {icon}
-        <h2 className="text-2xl font-semibold text-gray-800">{title}</h2>
+        <h2 className="text-xl font-semibold text-gray-800">{title}</h2>
       </div>
 
-      <div className="flex flex-col space-y-6">
-        {/* QR Code Section */}
-        <div className="flex justify-center items-center bg-gray-50 rounded-xl p-4">
-          <div className="w-64 h-64 bg-white p-4 rounded-xl shadow-md">
-            <img
-              src={qrCodeSrc}
-              alt={`${title} QR Code`}
-              className="w-full h-full object-contain"
-            />
+      <div className="flex flex-col space-y-4">
+        {/* Conditionally render QR code section only if qrCodeSrc exists */}
+        {qrCodeSrc && (
+          <div className="flex justify-center items-center bg-gray-50 rounded-xl p-3">
+            <div className="w-48 h-48 bg-white p-3 rounded-xl shadow-md">
+              <img
+                src={qrCodeSrc}
+                alt={`${title} QR Code`}
+                className="w-full h-full object-contain"
+              />
+            </div>
           </div>
-        </div>
+        )}
 
-        <div className="space-y-4">
-          <div className="bg-gray-50 rounded-xl p-4 flex items-center justify-between">
+        <div className="space-y-3">
+          <div className="bg-gray-50 rounded-xl p-3 flex items-center justify-between">
             <div>
-              <p className="text-sm text-gray-600 mb-1">Payment Details</p>
-              <p className="font-medium text-gray-800">{number}</p>
+              <p className="text-xs text-gray-600 mb-1">Payment Details</p>
+              <p className="text-sm font-medium text-gray-800 whitespace-pre-line">{number}</p>
             </div>
             <button
               onClick={handleCopy}
-              className="text-green-600 hover:bg-green-50 p-2 rounded-full transition-colors"
+              className="text-green-600 hover:bg-green-50 p-1 rounded-full transition-colors"
             >
               {copied ? (
-                <Check className="w-5 h-5" />
+                <Check className="w-4 h-4" />
               ) : (
-                <Copy className="w-5 h-5" />
+                <Copy className="w-4 h-4" />
               )}
             </button>
           </div>
-          <p className="text-sm text-gray-500">
-            Scan QR or use provided details for donation
+          <p className="text-xs text-gray-500">
+            {title === 'Cheque' 
+              ? 'For cheque, please mail to the provided address' 
+              : 'Scan QR or use provided details for donation'}
           </p>
         </div>
       </div>
@@ -154,13 +158,19 @@ const DonationPage = () => {
       qrCodeSrc: "/cashApp.png",
       number: "$Alhudamasjid",
     },
+    {
+      icon: <Check className="w-10 h-10 text-green-600" />,
+      title: "Cheque",
+      qrCodeSrc: "", // Remove QR code
+      number: "Al-Huda Islamic Center\n123 Main Street\nYourCity, State ZIP",
+    },
   ];
 
   return (
-    <>
+    <section className="">
       <PageHeader title="Donation" breadcrumb="Donate" />
-      <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto space-y-8">
+      <div className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto space-y-8">
           <div className="text-center mb-10">
             <p className="text-gray-600 max-w-2xl mx-auto italic">
               The example of those who spend their wealth in the way of Allah is
@@ -170,7 +180,6 @@ const DonationPage = () => {
             <p className="text-green-600 font-semibold">- Quran 2:261</p>
           </div>
 
-          {/* Payment Methods - Now in 3 columns */}
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             {paymentMethods.map((method, index) => (
               <PaymentMethodCard key={index} {...method} />
@@ -183,7 +192,7 @@ const DonationPage = () => {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

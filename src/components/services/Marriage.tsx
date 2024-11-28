@@ -31,9 +31,9 @@ const Marriage = () => {
       {/* New Introductory Section */}
       <section className="py-16 bg-green-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-green-900 mb-6">
+          {/* <h2 className="text-3xl font-bold text-green-900 mb-6">
             Islamic Marriage Services
-          </h2>
+          </h2> */}
           <p className="text-lg text-gray-700 leading-relaxed">
             Alhuda Islamic Center provides marriage religious services to
             Muslims according to Islamic principles. If you want to pursue a

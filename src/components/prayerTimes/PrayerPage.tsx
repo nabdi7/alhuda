@@ -21,7 +21,7 @@ interface AlAdhanResponse {
   };
 }
 
-const PrayerPage = () => {
+const PrayerTimes = () => {
   const [prayerTimes, setPrayerTimes] = useState<PrayerTime[]>([]);
   const [fridayPrayers, setFridayPrayers] = useState<PrayerTime[]>([]);
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -83,11 +83,11 @@ const PrayerPage = () => {
   }, [currentDate]);
 
   const handlePreviousDay = () => {
-    setCurrentDate(new Date(currentDate.getTime() - 86400000)); // 1 day in milliseconds
+    setCurrentDate(new Date(currentDate.getTime() - 86400000));
   };
 
   const handleNextDay = () => {
-    setCurrentDate(new Date(currentDate.getTime() + 86400000)); // 1 day in milliseconds
+    setCurrentDate(new Date(currentDate.getTime() + 86400000));
   };
 
   const formatDate = (date: Date) => {
@@ -124,9 +124,9 @@ const PrayerPage = () => {
   };
 
   return (
-    <>
-      <PageHeader title="Prayer Times" breadcrumb="Prayers" />
-      <section className="py-16 bg-white">
+    <section className="">
+      <PageHeader title="Prayer Times" breadcrumb="Prayers Times" />
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <div className="flex justify-center mb-6">
@@ -142,13 +142,16 @@ const PrayerPage = () => {
             </p>
             <p className="text-green-600 font-semibold">- Quran 4:103</p>
           </div>
-
           <div className="w-full bg-white shadow-lg rounded-xl overflow-hidden border border-gray-200">
-            {/* mosque name, address */}
             <div className="p-6 bg-gradient-to-r from-green-500 to-green-600 text-center">
-              <h2 className="text-3xl font-bold text-white drop-shadow-md">Alhuda Islamic Center</h2>
-              <p className="text-green-100 text-sm">25650 101st Ave SE, Kent, WA</p>
+              <h2 className="text-3xl font-bold text-white drop-shadow-md">
+                Alhuda Islamic Center
+              </h2>
+              <p className="text-green-100 text-sm">
+                25650 101st Ave SE, Kent, WA
+              </p>
             </div>
+
             <div className="p-4 bg-green-50 border-b border-gray-200 flex justify-between items-center">
               <button
                 className="text-green-600 hover:text-green-800 transition-colors"
@@ -166,6 +169,7 @@ const PrayerPage = () => {
                 <ChevronRight className="w-6 h-6" />
               </button>
             </div>
+
             <div className="p-6">
               {loading ? (
                 <div className="text-center py-12">
@@ -182,14 +186,16 @@ const PrayerPage = () => {
                       return (
                         <div
                           key={prayer.name}
-                          className={`flex items-center justify-between bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow ${
+                          className={`relative flex items-center justify-between bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow ${
                             isCurrentPrayer ? "ring-2 ring-green-500" : ""
                           }`}
                         >
                           {isCurrentPrayer && (
-                            <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">
-                              Current
-                            </span>
+                            <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
+                              <div className="bg-green-500 text-white text-xs px-3 py-1 rounded-full">
+                                Current
+                              </div>
+                            </div>
                           )}
                           <div className="flex items-center">
                             <Clock
@@ -227,7 +233,6 @@ const PrayerPage = () => {
                             className="flex items-center justify-between"
                           >
                             <div className="flex items-center space-x-3">
-                              {/* {getPrayerIcon('Jumua')} */}
                               <h4 className="text-gray-700 font-medium">
                                 Jumuah {index + 1}
                               </h4>
@@ -243,16 +248,14 @@ const PrayerPage = () => {
                 </div>
               )}
             </div>
-            <div className="p-6 bg-gradient-to-r from-green-500 to-green-600 text-center">
-              <p className="text-sm text-green-800">
-                
-              </p>
-            </div>
+            {/* <div className="p-6 bg-gradient-to-r from-green-500 to-green-600 text-center">
+            <p className="text-sm text-green-800"></p>
+          </div> */}
           </div>
         </div>
       </section>
-    </>
+    </section>
   );
 };
 
-export default PrayerPage;
+export default PrayerTimes;

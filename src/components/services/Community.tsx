@@ -98,7 +98,7 @@ const Community = () => {
         breadcrumb="Community Resources"
       />
       <section className="py-16 px-4 md:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+        <div className="">
           <div className="flex flex-wrap justify-center gap-2 mb-16 ">
             {categories.map((category) => (
               <button

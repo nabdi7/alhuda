@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const pages = [
     { name: "About Us", href: "/about" },
-    { name: "Imam's Message", href: "/" },
+    { name: "Announcement", href: "/" },
     { name: "Our Scholars", href: "/scholars" },
     { name: "New to Islam", href: "/new-to-islam" },
   ];

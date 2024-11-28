@@ -6,11 +6,11 @@ const Cta = () => {
     <section className="py-20">
       <div className="max-w-4xl mx-auto">
         <div className="bg-gradient-to-br from-emerald-900 to-emerald-800 rounded-2xl p-8 text-white">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 py-8">
             <div>
               <h2 className="text-2xl font-medium mb-2">Need Assistance?</h2>
               <p className="text-emerald-50">
-                We&apos;re here to help you through this difficult time.
+                We&apos;re here to help you.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
