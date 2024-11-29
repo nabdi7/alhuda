@@ -180,7 +180,7 @@ const DonationPage = () => {
             <p className="text-green-600 font-semibold">- Quran 2:261</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {paymentMethods.map((method, index) => (
               <PaymentMethodCard key={index} {...method} />
             ))}
