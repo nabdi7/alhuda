@@ -144,7 +144,7 @@ const DonationPage = () => {
       icon: <QrCode className="w-10 h-10 text-green-600" />,
       title: "Zelle",
       qrCodeSrc: "/qr.png",
-      number: "(XXX) XXX-XXXX",
+      number: "(253) 632-2310",
     },
     {
       icon: <CreditCard className="w-10 h-10 text-green-600" />,
@@ -162,14 +162,14 @@ const DonationPage = () => {
       icon: <Check className="w-10 h-10 text-green-600" />,
       title: "Cheque",
       qrCodeSrc: "", // Remove QR code
-      number: "Al-Huda Islamic Center\n123 Main Street\nYourCity, State ZIP",
+      number: "Al-Huda Islamic Center\n25650 101st Ave SE \nKent, WA 98030",
     },
   ];
 
   return (
     <section className="">
       <PageHeader title="Donation" breadcrumb="Donate" />
-      <div className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="bg-gray-50 py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto space-y-8">
           <div className="text-center mb-10">
             <p className="text-gray-600 max-w-2xl mx-auto italic">
@@ -187,9 +187,9 @@ const DonationPage = () => {
           </div>
 
           {/* Donation Form */}
-          <div className="max-w-2xl mx-auto w-full">
+          {/* <div className="max-w-2xl mx-auto w-full">
             <DonationForm />
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

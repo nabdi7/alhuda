@@ -45,7 +45,7 @@ const Education = () => {
         title="Weekend Islamic School"
         breadcrumb="Weekend Islamic School"
       />
-      <div className="py-16">
+      <div className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {classDetails.map((classItem, index) => {
             const isHovered = hoveredClass === index;

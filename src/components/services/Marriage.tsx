@@ -29,7 +29,7 @@ const Marriage = () => {
       <PageHeader title="Marriage Services" breadcrumb="Marriage Services" />
 
       {/* New Introductory Section */}
-      <section className="py-16 bg-green-50">
+      <section className="py-24 bg-green-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* <h2 className="text-3xl font-bold text-green-900 mb-6">
             Islamic Marriage Services
@@ -43,14 +43,16 @@ const Marriage = () => {
         </div>
       </section>
 
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service) => (
             <div
               key={service.title}
               className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
             >
-              <service.icon className="w-8 h-8 text-green-700 mb-6 transform group-hover:scale-110 transition-transform" />
+              <div className="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                <service.icon className="w-6 h-6 text-green-700 transform group-hover:scale-110 transition-transform" />
+              </div>
               <h3 className="text-xl font-bold mb-4">{service.title}</h3>
               <p className="text-gray-600 leading-relaxed">
                 {service.description}
@@ -61,7 +63,7 @@ const Marriage = () => {
       </section>
 
       {/* Contact Information Section */}
-      <section className="py-20 bg-green-50">
+      <section className="py-24 bg-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-serif font-bold text-center mb-16">
             Contact Our Marriage Services
@@ -77,21 +79,23 @@ const Marriage = () => {
               {
                 title: "Contact Information",
                 description:
-                  "Phone: (555) 123-4567\nEmail: marriage@islamiccenter.org",
+                  "Phone: (253) 632-2310\nEmail: info@alhudakent.org",
                 icon: Phone,
               },
               {
                 title: "Visit Us",
                 description:
-                  "123 Islamic Way\nSpringfield, IL 62701\nUnited States",
+                  "25650 101st Ave SE, \nKent, WA 98030",
                 icon: MapPin,
               },
             ].map((contact) => (
               <div
                 key={contact.title}
-                className=" text-center group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
               >
-                <contact.icon className="w-10 h-10 text-green-700 mx-auto mb-6" />
+                <div className="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                  <contact.icon className="w-6 h-6 text-green-700" />
+                </div>
                 <h3 className="text-xl font-bold mb-4">{contact.title}</h3>
                 <p className="text-gray-600 whitespace-pre-line">
                   {contact.description}

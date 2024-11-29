@@ -15,11 +15,11 @@ const WhatsAppCTA = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Left Content */}
-          <div className="flex-1 max-w-xl">
+          <div className="flex-1">
             <div className="space-y-8">
               <h2 className="text-4xl font-serif font-bold text-gray-900">
-                Join Our
-                <span className="block text-green-700">WhatsApp Community</span>
+                Join Our {" "}
+                <span className="lg:block text-green-700">WhatsApp Community</span>
               </h2>
 
               <p className="text-lg text-gray-600 leading-relaxed">
@@ -30,7 +30,7 @@ const WhatsAppCTA = () => {
           </div>
 
           {/* Right Content */}
-          <div className="lg:flex-1">
+          <div className="flex-1 w-full lg:w-auto">
             <div className="relative">
               {/* <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-green-600 rounded-3xl transform rotate-6 blur-sm"></div> */}
               <div className="relative bg-white rounded-3xl shadow-xl p-8">
@@ -39,7 +39,7 @@ const WhatsAppCTA = () => {
                     <img
                       src="/qr.png"
                       alt="WhatsApp Group QR Code"
-                      className="w-64 h-64"
+                      className="w-full max-w-[256px] h-auto"
                     />
                   </div>
                   <div className="space-y-4">

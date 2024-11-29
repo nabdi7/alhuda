@@ -126,7 +126,7 @@ const PrayerTimes = () => {
   return (
     <section className="">
       <PageHeader title="Prayer Times" breadcrumb="Prayers Times" />
-      <section className="py-16">
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <div className="flex justify-center mb-6">

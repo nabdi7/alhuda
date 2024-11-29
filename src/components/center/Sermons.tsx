@@ -10,7 +10,7 @@ const Sermon = () => {
     description:
       "A profound exploration of spiritual growth and inner peace in contemporary life.",
     channel: {
-      name: "Spiritual Insights",
+      name: "Alhuda Islamic Center (Kent, WA)",
       subscribers: "5.2K",
       link: "https://www.youtube.com/@najibcoder",
     },

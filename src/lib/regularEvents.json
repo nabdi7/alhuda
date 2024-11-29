@@ -15,7 +15,34 @@
             {
               "time": "7:00 pm - 8:30 pm",
               "title": "ISLAMIC HISTORY LECTURE",
-              "image": "/board2.jpg"
+              "image": "/front.jpeg"
+            }
+          ]
+        },
+        "8": {  
+          "5": [
+            {
+              "time": "7:00 pm - 8:30 pm",
+              "title": "ISLAMIC HISTORY LECTURE",
+              "image": "/front.jpeg"
+            }
+          ]
+        },
+        "9": {  
+          "5": [
+            {
+              "time": "7:00 pm - 8:30 pm",
+              "title": "ISLAMIC HISTORY LECTURE",
+              "image": "/front.jpeg"
+            }
+          ]
+        },
+        "10": {  
+          "3": [
+            {
+              "time": "7:00 pm - 8:30 pm",
+              "title": "ISLAMIC HISTORY LECTURE",
+              "image": "/front.jpeg"
             }
           ]
         },
@@ -24,7 +51,7 @@
             {
               "time": "6:00 pm - 7:30 pm",
               "title": "Testing November",
-              "image": "/board2.jpg"
+              "image": "/najib.jpg"
             }
           ],
           "21": [
@@ -38,7 +65,7 @@
             {
               "time": "6:00 pm - 7:30 pm",
               "title": "Testing November",
-              "image": "/board2.jpg"
+              "image": "/abdirahin.JPG"
             }
           ]
         },
@@ -47,7 +74,7 @@
             {
               "time": "7:00 pm - 8:30 pm",
               "title": "ISLAMIC HISTORY LECTURE",
-              "image": "/board2.jpg"
+              "image": "/najib.jpg"
             }
           ]
         }

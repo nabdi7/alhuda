@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Globe } from "lucide-react";
+import { Globe, Mail, Phone } from "lucide-react";
 import PageHeader from "../header/PageHeader";
 
 const Community = () => {
@@ -97,7 +97,7 @@ const Community = () => {
         title="Community Resources"
         breadcrumb="Community Resources"
       />
-      <section className="py-16 px-4 md:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="">
           <div className="flex flex-wrap justify-center gap-2 mb-16 ">
             {categories.map((category) => (
@@ -148,15 +148,17 @@ const Community = () => {
                           {contact.email && (
                             <a
                               href={`mailto:${contact.email}`}
-                              className="text-xs text-gray-600 block mb-1 hover:text-green-800 hover:underline"
+                              className="text-xs text-gray-600 mb-3 hover:text-green-800 hover:underline flex items-center"
                             >
+                              <Mail className="w-4 h-4 mr-2 text-gray-500" />
                               {contact.email}
                             </a>
                           )}
                           <a
                             href={`tel:${contact.phone.replace(/\D/g, "")}`}
-                            className="text-xs text-gray-600 mt-10"
+                            className="text-xs text-gray-600 flex items-center"
                           >
+                            <Phone className="w-4 h-4 mr-2 text-gray-500" />
                             {contact.phone}
                           </a>
                         </div>

@@ -16,10 +16,57 @@ const Scholars = () => {
   const [filter, setFilter] = useState("all");
 
   const teams = {
-    board: {
-      title: "Board Members",
-      description:
-        "Our dedicated board members who guide our organization's vision and strategy.",
+    // board: {
+    //   title: "Board Members",
+    //   members: [
+    //     {
+    //       name: "Sheikh Ahmed Nuur",
+    //       role: "Iman",
+    //       image: "/abdirahin.JPG",
+    //       facebook: "#",
+    //       linkedin: "#",
+    //       instagram: "#",
+    //       email: "example@gmail.com",
+    //       phone: "+1 (206) 390-6449",
+    //       department: "leadership",
+    //     },
+    //     {
+    //       name: "Sheikh Abdirahin",
+    //       role: "Vice President",
+    //       image: "/board2.jpg",
+    //       facebook: "#",
+    //       linkedin: "#",
+    //       instagram: "#",
+    //       email: "example@gmail.com",
+    //       phone: "+1 (206) 390-6449",
+    //       department: "leadership",
+    //     },
+    //     {
+    //       name: "Sheikh Abdirahin2",
+    //       role: "Vice President",
+    //       image: "/abdirahin.JPG",
+    //       facebook: "#",
+    //       linkedin: "#",
+    //       instagram: "#",
+    //       email: "example@gmail.com",
+    //       phone: "+1 (555) 789-0123",
+    //       department: "leadership",
+    //     },
+    //     {
+    //       name: "Sheikh Abdirahin",
+    //       role: "Vice President",
+    //       image: "/board2.jpg",
+    //       facebook: "#",
+    //       linkedin: "#",
+    //       instagram: "#",
+    //       email: "example@gmail.com",
+    //       phone: "+1 (206) 390-6449",
+    //       department: "leadership",
+    //     },
+    //   ],
+    // },
+    imams: {
+      title: "Imams",
       members: [
         {
           name: "Sheikh Ahmed Nuur",
@@ -30,99 +77,55 @@ const Scholars = () => {
           instagram: "#",
           email: "example@gmail.com",
           phone: "+1 (206) 390-6449",
-          department: "leadership",
+          department: "imams",
         },
         {
           name: "Sheikh Abdirahin",
-          role: "Vice President",
+          role: "Imam",
           image: "/board2.jpg",
           facebook: "#",
           linkedin: "#",
           instagram: "#",
           email: "example@gmail.com",
           phone: "+1 (206) 390-6449",
-          department: "leadership",
-        },
-        {
-          name: "Sheikh Abdirahin2",
-          role: "Vice President",
-          image: "/abdirahin.JPG",
-          facebook: "#",
-          linkedin: "#",
-          instagram: "#",
-          email: "example@gmail.com",
-          phone: "+1 (555) 789-0123",
-          department: "leadership",
-        },
-        {
-          name: "Sheikh Abdirahin",
-          role: "Vice President",
-          image: "/board2.jpg",
-          facebook: "#",
-          linkedin: "#",
-          instagram: "#",
-          email: "example@gmail.com",
-          phone: "+1 (206) 390-6449",
-          department: "leadership",
-        },
-      ],
-    },
-    imams: {
-      title: "Imams",
-      description:
-        "Our knowledgeable imams who lead our community in prayer and provide spiritual guidance.",
-      members: [
-        {
-          name: "Sarah Ahmed",
-          role: "Community Outreach",
-          image: "/abdirahin.JPG",
-          facebook: "#",
-          linkedin: "#",
-          instagram: "#",
-          email: "example@gmail.com",
-          phone: "+1 (555) 567-8901",
           department: "imams",
         },
       ],
     },
-    volunteers: {
-      title: "Volunteers",
-      description:
-        "Our amazing volunteers who dedicate their time and energy to support our cause.",
-      members: [
-        {
-          name: "Sarah Ahmed",
-          role: "Community Outreach",
-          image: "/abdirahin.JPG",
-          facebook: "#",
-          linkedin: "#",
-          instagram: "#",
-          email: "example@gmail.com",
-          phone: "+1 (555) 567-8901",
-          department: "volunteers",
-        },
-      ],
-    },
-    tech: {
-      title: "Tech Team",
-      description:
-        "Our talented tech professionals who maintain and improve our digital presence.",
-      members: [
-        {
-          name: "Najib Abdi",
-          role: "Web Designer",
-          image: "/najib.jpg",
-          facebook: "#",
-          linkedin: "#",
-          instagram: "#",
-          email: "abdinajka@gmail.com",
-          phone: "+1 (206) 883-3462",
-          department: "Tech Team",
-          // url link
-          linkUrl: "https://example.com/team/najib-abdi",
-        },
-      ],
-    },
+    // volunteers: {
+    //   title: "Volunteers",
+    //   members: [
+    //     {
+    //       name: "Sarah Ahmed",
+    //       role: "Community Outreach",
+    //       image: "/abdirahin.JPG",
+    //       facebook: "#",
+    //       linkedin: "#",
+    //       instagram: "#",
+    //       email: "example@gmail.com",
+    //       phone: "+1 (555) 567-8901",
+    //       department: "volunteers",
+    //     },
+    //   ],
+    // },
+    // tech: {
+    //   title: "Tech Team",
+    //   members: [
+    //     {
+    //       name: "Najib Abdi",
+    //       role: "Web Designer",
+    //       image: "/najib.jpg",
+    //       facebook: "#",
+    //       linkedin: "#",
+    //       instagram: "#",
+    //       email: "abdinajka@gmail.com",
+    //       phone: "+1 (206) 883-3462",
+    //       department: "Tech Team",
+    //       // url link
+    //       linkUrl: "https://example.com/team/najib-abdi",
+    //     },
+    //   ],
+    // },
   };
 
   // Get all unique departments across all teams
@@ -152,35 +155,24 @@ const Scholars = () => {
     return `${filter.charAt(0).toUpperCase() + filter.slice(1)}`;
   };
 
-  // Function to get section description based on filter
-  const getSectionDescription = (originalDescription) => {
-    if (filter === "all") {
-      return originalDescription;
-    }
-    return `Our dedicated ${filter} team members working together to achieve excellence.`;
-  };
-
-  const TeamSection = ({ title, description, members }) => {
+  const TeamSection = ({ title, members }) => {
     const filteredMembers = filterMembers(members);
 
     // Only render section if it has members matching the current filters
     if (filteredMembers.length === 0) return null;
 
     return (
-      <section className="py-20 bg-white">
+      <section className="py-12 bg-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Title */}
           <div className="text-center mb-16">
             <h2 className="text-4xl font-serif font-bold text-gray-900 mb-4">
               {getSectionTitle(title)}
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              {getSectionDescription(description)}
-            </p>
           </div>
 
           {/* Team Members Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-12">
             {filteredMembers.map((member, index) => (
               <div
                 key={index}
@@ -253,11 +245,10 @@ const Scholars = () => {
 
   return (
     <>
-      <section className="">
+      <section className="bg-green-50">
         <PageHeader title="Our Team" breadcrumb="Our Team" />
 
-        {/* Global Search and Filter */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start pb-5">
             <div className="flex flex-col items-start">
               <img
@@ -329,11 +320,10 @@ const Scholars = () => {
         </div>
       </section>
       {/* Team Sections */}
-      {Object.entries(teams).map(([key, { title, description, members }]) => (
+      {Object.entries(teams).map(([key, { title, members }]) => (
         <TeamSection
           key={key}
           title={title}
-          description={description}
           members={members}
         />
       ))}

@@ -6,7 +6,7 @@ const About = () => {
     <section className="bg-gray-50">
       <PageHeader title="About Us" breadcrumb="About" />
       {/* Mission Statement Section */}
-      <section className="relative py-16">
+      <section className="relative py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h1 className="text-4xl font-serif font-bold text-gray-900 mb-6">
@@ -24,7 +24,7 @@ const About = () => {
       </section>
 
       {/* Core Values */}
-      <section className="py-16 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-serif font-bold text-gray-900 mb-12 text-center">
             Our Core Values
@@ -74,7 +74,7 @@ const About = () => {
       </section>
 
       {/* History Section */}
-      <section className="py-16">
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -115,11 +115,11 @@ const About = () => {
       </section>
 
       {/* Vision for Future Section */}
-      <section className="py-16 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <div className="w-full h-[300px] rounded-lg overflow-hidden shadow-lg">
+            <div className="order-2 lg:order-1 relative">
+              <div className="w-full h-[400px] rounded-lg overflow-hidden shadow-lg">
                 <img
                   src="/front.jpeg"
                   alt="Future Vision"
@@ -128,7 +128,7 @@ const About = () => {
               </div>
               <div className="absolute -top-4 -right-4 w-32 h-32 bg-green-100 rounded-full opacity-50" />
             </div>
-            <div className="space-y-4 text-gray-600">
+            <div className="order-1 lg:order-2 space-y-4 text-gray-600">
               <h2 className="text-3xl font-serif font-bold text-gray-900 mb-8">
                 Our Vision for the Future
               </h2>

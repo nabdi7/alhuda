@@ -10,7 +10,7 @@ import {
 import recurringEventsData from "../../lib/recurringEvents.json";
 import regularEventsData from "../../lib/regularEvents.json";
 import PageHeader from "../header/PageHeader";
-
+import Image from "next/image";
 const EventCard = ({ date, title, image, time }) => (
   <div
     className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 
@@ -27,9 +27,11 @@ const EventCard = ({ date, title, image, time }) => (
     </div>
     <div className="p-5">
       <div className="mb-4 overflow-hidden rounded-lg">
-        <img
+        <Image
           src={image || "/api/placeholder/400/300"}
           alt={title}
+          width={400} 
+      height={300} 
           className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
         />
       </div>
@@ -181,6 +183,7 @@ const EventsPage = () => {
                 }),
                 title: event.title,
                 time: event.time,
+                image: event.image,
               });
             });
           }
@@ -196,7 +199,11 @@ const EventsPage = () => {
   const getPreviousEvents = () => {
     const events = [];
     const today = new Date();
-
+    
+    // Get the first day of the previous month
+    const lastMonth = new Date(today.getFullYear(), today.getMonth() - 1, 1);
+    const lastMonthEnd = new Date(today.getFullYear(), today.getMonth(), 0);
+  
     // Add regular events
     Object.keys(regularEventsData.events).forEach((year) => {
       Object.keys(regularEventsData.events[year]).forEach((month) => {
@@ -206,7 +213,9 @@ const EventsPage = () => {
             parseInt(month) - 1,
             parseInt(day)
           );
-          if (eventDate < today) {
+          
+          // Check if the event is within the last month
+          if (eventDate >= lastMonth && eventDate < today) {
             regularEventsData.events[year][month][day].forEach((event) => {
               events.push({
                 date: eventDate.toLocaleDateString("en-US", {
@@ -215,14 +224,15 @@ const EventsPage = () => {
                 }),
                 title: event.title,
                 time: event.time,
+                image: event.image,
               });
             });
           }
         });
       });
     });
-
-    // Sort events by date
+  
+    // Sort events by date in descending order
     return events.sort((a, b) => new Date(b.date) - new Date(a.date));
   };
 
@@ -243,20 +253,20 @@ const EventsPage = () => {
   const previousEvents = useMemo(() => getPreviousEvents(), []);
 
   return (
-    <section className="bg-gray-50">
+    <section className="bg-green-50">
       <PageHeader title="Events" breadcrumb="Events" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         {/* Upcoming Events */}
-        <div className="mb-16">
+        <div className="">
           <h1
-            className="text-4xl font-extrabold mb-12 text-center text-gray-800 
+            className="text-4xl font-extrabold pb-12 text-center text-gray-800 
             bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-800"
           >
             Upcoming Events
           </h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-12">
             {upcomingEvents.map((event, index) => (
               <EventCard
                 key={index}
@@ -269,7 +279,7 @@ const EventsPage = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-[1fr_400px] py-12">
+        <div className="grid lg:grid-cols-[1fr_400px] py-12">
           {/* Calendar Section */}
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <div className="flex items-center justify-between mb-8">
@@ -443,7 +453,7 @@ const EventsPage = () => {
         </div>
 
         {/* previous events */}
-        <div className="mb-16">
+        <div className="py-12">
           <h1
             className="text-4xl font-extrabold mb-12 text-center text-gray-800 
             bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-800"

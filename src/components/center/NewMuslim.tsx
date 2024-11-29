@@ -6,8 +6,8 @@ const NewMuslim = () => {
     <>
       <section className="bg-white">
         <PageHeader title="New to Islam" breadcrumb="New to Islam" />
-        <div className="text-gray-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+        <div className="text-gray-800 py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div>
               <h2 className="text-3xl font-bold text-green-800 mb-6">
                 Understanding Islam

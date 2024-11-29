@@ -37,7 +37,7 @@ const Footer = () => {
             </div>
             <p className="text-gray-600 text-sm">
               Serving our community with Islamic education, prayer services, and
-              social support since 1990.
+              social support.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-green-600">
@@ -75,7 +75,7 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-green-600" />
-                <span className="text-sm text-gray-600">(555) 123-4567</span>
+                <span className="text-sm text-gray-600">(253) 632-2310</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-green-600" />
@@ -86,9 +86,9 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-green-600 mt-0.5" />
                 <span className="text-sm text-gray-600">
-                  123 Mosque Street
+                  25650 101st Ave SE
                   <br />
-                  City, State 12345
+                  Kent, WA 98030
                 </span>
               </div>
             </div>

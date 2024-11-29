@@ -115,7 +115,7 @@ const Events = () => {
   return (
     <section className="bg-gray-100 py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid md:grid-cols-[1fr_400px]">
+        <div className="grid lg:grid-cols-[1fr_400px]">
           {/* Calendar Section */}
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <div className="flex items-center justify-between mb-8">

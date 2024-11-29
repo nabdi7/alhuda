@@ -5,11 +5,11 @@ const Contact = () => {
   return (
     <section className="bg-gray-50">
       <PageHeader title="Contact Us" breadcrumb="Contact" />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         {/* Contact Info */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div className="bg-white rounded-2xl shadow-lg p-6 transform transition-all duration-300 text-center">
-            <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4">
               <Phone className="w-6 h-6 text-green-700" />
             </div>
             <h3 className="font-bold mb-2">Phone</h3>
@@ -17,7 +17,7 @@ const Contact = () => {
           </div>
 
           <div className="bg-white rounded-2xl shadow-lg p-6 transform transition-all duration-300 text-center">
-            <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4">
               <Mail className="w-6 h-6 text-green-700" />
             </div>
             <h3 className="font-bold mb-2">Email</h3>
@@ -25,7 +25,7 @@ const Contact = () => {
           </div>
 
           <div className="bg-white rounded-2xl shadow-lg p-6 transform transition-all duration-300 text-center">
-            <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4">
               <MapPin className="w-6 h-6 text-green-700" />
             </div>
             <h3 className="font-bold mb-2">Address</h3>

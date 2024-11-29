@@ -33,7 +33,7 @@ const Announcement = () => {
         {
           name: "Quran Memorization",
           time: "9:00 AM - 10:30 AM",
-          levels: ["Beginner", "Intermediate", "Advanced"],
+          levels: ["All Ages"],
         },
         {
           name: "Islamic Studies",

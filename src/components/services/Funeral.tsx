@@ -8,7 +8,7 @@ const Funeral = () => {
       <PageHeader title="Funeral" breadcrumb="Funeral" />
 
       {/* Main Content */}
-      <section className="py-16">
+      <section className="py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-green-900 mb-6">
             إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ
@@ -24,14 +24,14 @@ const Funeral = () => {
                 className="flex items-center gap-2 bg-white text-emerald-900 px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-colors w-full sm:w-auto justify-center"
               >
                 <Phone className="h-5 w-5" />
-                24/7 Support: (555) 123-4567
+                24/7 Support: (253) 632-2310
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Process Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 -mt-16">
           {[
@@ -57,8 +57,8 @@ const Funeral = () => {
                 key={index}
                 className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
               >
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6">
-                  <Icon className="h-10 w-10 text-emerald-700 transform group-hover:scale-110 transition-transform" />
+                <div className="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                  <Icon className="h-6 w-6 text-emerald-700 transform group-hover:scale-110 transition-transform" />
                 </div>
                 <h3 className="text-lg font-medium mb-4">{service.title}</h3>
                 <p className="text-gray-600">{service.description}</p>
@@ -69,7 +69,7 @@ const Funeral = () => {
       </section>
 
       {/* Funeral Process Section */}
-      <section className="py-20 max-w-4xl mx-auto">
+      <section className="py-24 max-w-4xl mx-auto">
         <div className="bg-white rounded-2xl p-8 shadow-sm">
           <h2 className="text-2xl font-medium mb-8">Funeral Process</h2>
           <div className="space-y-8">
@@ -100,7 +100,7 @@ const Funeral = () => {
                   {
                     title: "Muslim Section at Woodlawn Cemetery",
                     description:
-                      "Located in Snohomish. Contact Melissa at (425) 268-9459 or (360) 568-5560",
+                      "Located in Snohomish. Contact: (425) 268-9459 or (360) 568-5560",
                   },
                 ],
               },

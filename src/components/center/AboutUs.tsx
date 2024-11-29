@@ -6,14 +6,14 @@ const AboutUs = () => {
   return (
     <section className="py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Content */}
           <div className="space-y-6">
             <div className="inline-block p-3 bg-green-100 rounded-lg">
               <Book className="w-6 h-6 text-green-700" />
             </div>
             <h2 className="text-3xl font-serif font-bold text-gray-900">
-              Serving Our Community Since 1990
+              Serving Our Community 
             </h2>
             <p className="text-lg text-gray-600">
               Alhuda Islamic Center has been a cornerstone of the Kent Muslim
