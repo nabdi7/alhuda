@@ -13,7 +13,12 @@ const Contact = () => {
               <Phone className="w-6 h-6 text-green-700" />
             </div>
             <h3 className="font-bold mb-2">Phone</h3>
-            <p className="text-gray-600">(253) 632-2310</p>
+            <a 
+              href="tel:+12536322310" 
+              className="text-gray-600 hover:text-green-700 transition-colors"
+            >
+              (253) 632-2310
+            </a>
           </div>
 
           <div className="bg-white rounded-2xl shadow-lg p-6 transform transition-all duration-300 text-center">
@@ -21,7 +26,12 @@ const Contact = () => {
               <Mail className="w-6 h-6 text-green-700" />
             </div>
             <h3 className="font-bold mb-2">Email</h3>
-            <p className="text-gray-600">info@alhudakent.org</p>
+            <a 
+              href="mailto:info@alhudakent.org" 
+              className="text-gray-600 hover:text-green-700 transition-colors"
+            >
+              info@alhudakent.org
+            </a>
           </div>
 
           <div className="bg-white rounded-2xl shadow-lg p-6 transform transition-all duration-300 text-center">
@@ -29,7 +39,14 @@ const Contact = () => {
               <MapPin className="w-6 h-6 text-green-700" />
             </div>
             <h3 className="font-bold mb-2">Address</h3>
-            <p className="text-gray-600">25650 101st Ave SE, Kent, WA</p>
+            <a 
+              href="https://maps.app.goo.gl/D7rp4cSxwRF2df8H9" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-green-700 transition-colors"
+            >
+              25650 101st Ave SE, Kent, WA
+            </a>
           </div>
         </div>
 

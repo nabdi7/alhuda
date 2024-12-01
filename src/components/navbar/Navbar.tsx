@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const pages = [
     { name: "About Us", href: "/about" },
-    { name: "Announcement", href: "/" },
+    { name: "Announcement", href: "/announcement" },
     { name: "Our Scholars", href: "/scholars" },
     { name: "New to Islam", href: "/new-to-islam" },
   ];
@@ -134,7 +134,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center">
             <Link
               href="/donate"
-              className="bg-green-600 text-white hover:bg-green-700 px-4 py-2 rounded-md text-sm font-medium"
+              className="bg-green-700 text-white hover:bg-green-800 px-4 py-2 rounded-md text-sm font-medium"
             >
               Donate
             </Link>

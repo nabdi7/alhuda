@@ -148,7 +148,7 @@ const Community = () => {
                           {contact.email && (
                             <a
                               href={`mailto:${contact.email}`}
-                              className="text-xs text-gray-600 mb-3 hover:text-green-800 hover:underline flex items-center"
+                              className="text-sm text-gray-600 mb-3 hover:text-green-800 hover:underline flex items-center"
                             >
                               <Mail className="w-4 h-4 mr-2 text-gray-500" />
                               {contact.email}
@@ -156,7 +156,7 @@ const Community = () => {
                           )}
                           <a
                             href={`tel:${contact.phone.replace(/\D/g, "")}`}
-                            className="text-xs text-gray-600 flex items-center"
+                            className="text-sm text-gray-600 hover:text-green-800 flex items-center"
                           >
                             <Phone className="w-4 h-4 mr-2 text-gray-500" />
                             {contact.phone}

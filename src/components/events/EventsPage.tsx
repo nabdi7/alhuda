@@ -30,8 +30,8 @@ const EventCard = ({ date, title, image, time }) => (
         <Image
           src={image || "/api/placeholder/400/300"}
           alt={title}
-          width={400} 
-      height={300} 
+          width={400}
+          height={300}
           className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
         />
       </div>
@@ -199,11 +199,11 @@ const EventsPage = () => {
   const getPreviousEvents = () => {
     const events = [];
     const today = new Date();
-    
+
     // Get the first day of the previous month
     const lastMonth = new Date(today.getFullYear(), today.getMonth() - 1, 1);
     const lastMonthEnd = new Date(today.getFullYear(), today.getMonth(), 0);
-  
+
     // Add regular events
     Object.keys(regularEventsData.events).forEach((year) => {
       Object.keys(regularEventsData.events[year]).forEach((month) => {
@@ -213,7 +213,7 @@ const EventsPage = () => {
             parseInt(month) - 1,
             parseInt(day)
           );
-          
+
           // Check if the event is within the last month
           if (eventDate >= lastMonth && eventDate < today) {
             regularEventsData.events[year][month][day].forEach((event) => {
@@ -231,7 +231,7 @@ const EventsPage = () => {
         });
       });
     });
-  
+
     // Sort events by date in descending order
     return events.sort((a, b) => new Date(b.date) - new Date(a.date));
   };
@@ -279,15 +279,80 @@ const EventsPage = () => {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-[1fr_400px] py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] py-12">
+          {/* Events Section */}
+          <div
+            className="
+              bg-gradient-to-br from-green-700 to-green-600 
+              text-white rounded-2xl p-8 
+              shadow-lg shadow-green-300/50
+              order-1 lg:order-2
+            "
+          >
+            <h3
+              className="
+          text-2xl font-bold mb-6 
+          border-b border-white/20 pb-4
+        "
+            >
+              Events on {selectedDate}th {months[currentMonth.getMonth()]}
+            </h3>
+
+            {selectedDateEvents.length > 0 ? (
+              selectedDateEvents.map((event, index) => (
+                <div
+                  key={index}
+                  className="
+                bg-white/10 rounded-lg p-4 mb-4 
+                hover:bg-white/20 transition-colors
+                group
+              "
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center space-x-2">
+                      <div
+                        className="
+                    w-2 h-2 bg-white rounded-full 
+                    group-hover:animate-ping
+                  "
+                      ></div>
+                      <span className="text-sm">{event.time}</span>
+                      {event.recurring && (
+                        <span
+                          className="
+                      bg-white/20 text-xs px-2 py-0.5 
+                      rounded-full
+                    "
+                        >
+                          Recurring
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                  <h4 className="font-semibold text-white">{event.title}</h4>
+                </div>
+              ))
+            ) : (
+              <div
+                className="
+                  text-white/80 text-center 
+                  bg-white/10 rounded-lg p-8
+                "
+              >
+                <CalendarDays className="w-12 h-12 mx-auto mb-4 opacity-50" />
+                <p>No events on this day</p>
+              </div>
+            )}
+          </div>
+
           {/* Calendar Section */}
-          <div className="bg-white rounded-2xl shadow-lg p-8">
+          <div className="bg-white rounded-2xl shadow-lg p-8 order-2 lg:order-1">
             <div className="flex items-center justify-between mb-8">
               <button
                 onClick={previousMonth}
                 className="text-gray-600 hover:text-green-700 
-                  p-2 hover:bg-green-50 rounded-full 
-                  transition-colors"
+                p-2 hover:bg-green-50 rounded-full 
+                transition-colors"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
@@ -299,8 +364,8 @@ const EventsPage = () => {
               <button
                 onClick={nextMonth}
                 className="text-gray-600 hover:text-green-700 
-                  p-2 hover:bg-green-50 rounded-full 
-                  transition-colors"
+                p-2 hover:bg-green-50 rounded-full 
+                transition-colors"
               >
                 <ChevronRight className="w-6 h-6" />
               </button>
@@ -325,35 +390,34 @@ const EventsPage = () => {
                     key={index}
                     onClick={() => handleDateSelect(day)}
                     className={`min-h-[80px] p-1 relative border rounded-md text-left
-                    transition-all duration-300
-                    ${
-                      day.currentMonth
-                        ? "hover:bg-green-50 hover:shadow-sm"
-                        : "bg-gray-50 opacity-50"
-                    }
-                    ${
-                      selectedDate === day.day && day.currentMonth
-                        ? " border-green-700"
-                        : "border-gray-200"
-                    } 
-                  `}
+                transition-all duration-300
+                ${
+                  day.currentMonth
+                    ? "hover:bg-green-50 hover:shadow-sm"
+                    : "bg-gray-50 opacity-50"
+                }
+                ${
+                  selectedDate === day.day && day.currentMonth
+                    ? " border-green-700"
+                    : "border-gray-200"
+                } 
+              `}
                   >
                     <span
                       className={`
-                        absolute top-1 right-1 
-                        w-6 h-6 flex items-center justify-center 
-                        rounded-full text-sm font-semibold
-                        ${day.currentMonth ? "text-gray-800" : "text-gray-400"}
-                        ${
-                          selectedDate === day.day && day.currentMonth
-                            ? "bg-green-700 text-white"
-                            : ""
-                        }
-                      `}
+                    absolute top-1 right-1 
+                    w-6 h-6 flex items-center justify-center 
+                    rounded-full text-sm font-semibold
+                    ${day.currentMonth ? "text-gray-800" : "text-gray-400"}
+                    ${
+                      selectedDate === day.day && day.currentMonth
+                        ? "bg-green-700 text-white"
+                        : ""
+                    }
+                  `}
                     >
                       {day.day}
                     </span>
-                    {/* Show event dots on mobile, times on desktop */}
                     <div className="mt-6 space-y-1">
                       {day.currentMonth && dayEvents.length > 0 && (
                         <>
@@ -385,70 +449,6 @@ const EventsPage = () => {
                 );
               })}
             </div>
-          </div>
-
-          {/* Events Section */}
-          <div
-            className="
-            bg-gradient-to-br from-green-700 to-green-600 
-            text-white rounded-2xl p-8 
-            shadow-lg shadow-green-300/50
-          "
-          >
-            <h3
-              className="
-              text-2xl font-bold mb-6 
-              border-b border-white/20 pb-4
-            "
-            >
-              Events on {selectedDate}th {months[currentMonth.getMonth()]}
-            </h3>
-
-            {selectedDateEvents.length > 0 ? (
-              selectedDateEvents.map((event, index) => (
-                <div
-                  key={index}
-                  className="
-                    bg-white/10 rounded-lg p-4 mb-4 
-                    hover:bg-white/20 transition-colors
-                    group
-                  "
-                >
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center space-x-2">
-                      <div
-                        className="
-                        w-2 h-2 bg-white rounded-full 
-                        group-hover:animate-ping
-                      "
-                      ></div>
-                      <span className="text-sm">{event.time}</span>
-                      {event.recurring && (
-                        <span
-                          className="
-                          bg-white/20 text-xs px-2 py-0.5 
-                          rounded-full
-                        "
-                        >
-                          Recurring
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                  <h4 className="font-semibold text-white">{event.title}</h4>
-                </div>
-              ))
-            ) : (
-              <div
-                className="
-                text-white/80 text-center 
-                bg-white/10 rounded-lg p-8
-              "
-              >
-                <CalendarDays className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                <p>No events on this day</p>
-              </div>
-            )}
           </div>
         </div>
 

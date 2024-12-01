@@ -27,13 +27,8 @@ const Marriage = () => {
   return (
     <section className="bg-gradient-to-b from-gray-50 to-white">
       <PageHeader title="Marriage Services" breadcrumb="Marriage Services" />
-
-      {/* New Introductory Section */}
       <section className="py-24 bg-green-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          {/* <h2 className="text-3xl font-bold text-green-900 mb-6">
-            Islamic Marriage Services
-          </h2> */}
           <p className="text-lg text-gray-700 leading-relaxed">
             Alhuda Islamic Center provides marriage religious services to
             Muslims according to Islamic principles. If you want to pursue a
@@ -62,7 +57,7 @@ const Marriage = () => {
         </div>
       </section>
 
-      {/* Contact Information Section */}
+      {/* Contact Info */}
       <section className="py-24 bg-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-serif font-bold text-center mb-16">
@@ -83,9 +78,8 @@ const Marriage = () => {
                 icon: Phone,
               },
               {
-                title: "Visit Us",
-                description:
-                  "25650 101st Ave SE, \nKent, WA 98030",
+                title: "Location",
+                description: "25650 101st Ave SE, \nKent, WA 98030",
                 icon: MapPin,
               },
             ].map((contact) => (

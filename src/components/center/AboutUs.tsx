@@ -17,7 +17,7 @@ const AboutUs = () => {
             </h2>
             <p className="text-lg text-gray-600">
               Alhuda Islamic Center has been a cornerstone of the Kent Muslim
-              community for over three decades. We provide a welcoming space for
+              community for over two decades. We provide a welcoming space for
               prayer, learning, and building meaningful connections through
               Islamic education and community programs.
             </p>

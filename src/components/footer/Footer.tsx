@@ -35,18 +35,33 @@ const Footer = () => {
                 />
               </Link>
             </div>
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-600">
               Serving our community with Islamic education, prayer services, and
               social support.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-green-600">
+              <a
+                href="https://www.facebook.com/alhudakent"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-green-600"
+              >
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-green-600">
+              <a
+                href="https://www.instagram.com/alhudakent/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-green-600"
+              >
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-green-600">
+              <a
+                href="https://www.youtube.com/alhudakent"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-green-600"
+              >
                 <Youtube className="h-5 w-5" />
               </a>
             </div>
@@ -60,7 +75,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-600 hover:text-green-600 text-sm"
+                    className="text-gray-600 hover:text-green-600 "
                   >
                     {link.name}
                   </Link>
@@ -75,21 +90,34 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-green-600" />
-                <span className="text-sm text-gray-600">(253) 632-2310</span>
+                <a
+                  href="tel:+12536322310"
+                  className=" text-gray-600 hover:text-green-600 transition-colors"
+                >
+                  (253) 632-2310
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-green-600" />
-                <span className="text-sm text-gray-600">
-                  info@mosquename.org
-                </span>
+                <a
+                  href="mailto:info@alhudakent.org"
+                  className=" text-gray-600 hover:text-green-600 transition-colors"
+                >
+                  info@alhudakent.org
+                </a>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-green-600 mt-0.5" />
-                <span className="text-sm text-gray-600">
+                <a
+                  href="https://maps.app.goo.gl/D7rp4cSxwRF2df8H9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className=" text-gray-600 hover:text-green-600 transition-colors"
+                >
                   25650 101st Ave SE
                   <br />
                   Kent, WA 98030
-                </span>
+                </a>
               </div>
             </div>
           </div>
@@ -97,12 +125,12 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t mt-12 pt-8">
-          <p className="text-center text-sm text-gray-500">
+          <p className="text-center  text-gray-500">
             © {new Date().getFullYear()} Alhuda Islamic Center. All rights
             reserved.
           </p>
           {/* made by */}
-          <p className="text-center text-sm text-gray-500">
+          <p className="text-center text-gray-500">
             Made by{" "}
             <a
               href="https://www.qdwebdesigns.com"

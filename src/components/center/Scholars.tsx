@@ -10,6 +10,7 @@ import {
   Filter,
 } from "lucide-react";
 import PageHeader from "../header/PageHeader";
+import Image from "next/image";
 
 const Scholars = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -70,22 +71,22 @@ const Scholars = () => {
       members: [
         {
           name: "Sheikh Ahmed Nuur",
-          role: "Iman",
-          image: "/abdirahin.JPG",
-          facebook: "#",
-          linkedin: "#",
-          instagram: "#",
+          role: "Imam",
+          image: "",
+          facebook: "https://www.facebook.com",
+          linkedin: "https://www.linkedin.com",
+          instagram: "https://www.instagram.com",
           email: "example@gmail.com",
           phone: "+1 (206) 390-6449",
           department: "imams",
         },
         {
-          name: "Sheikh Abdirahin",
+          name: "Sheikh Abdirahin Albadri",
           role: "Imam",
-          image: "/board2.jpg",
-          facebook: "#",
-          linkedin: "#",
-          instagram: "#",
+          image: "/abdirahin.JPG",
+          facebook: "https://www.facebook.com/abdirahin.mohameddahir",
+          linkedin: "https://www.linkedin.com",
+          instagram: "https://www.instagram.com",
           email: "example@gmail.com",
           phone: "+1 (206) 390-6449",
           department: "imams",
@@ -172,7 +173,7 @@ const Scholars = () => {
           </div>
 
           {/* Team Members Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-12">
             {filteredMembers.map((member, index) => (
               <div
                 key={index}
@@ -182,8 +183,10 @@ const Scholars = () => {
 
                 <div className="p-6 flex flex-col items-center">
                   <div className="w-48 h-48 mb-6">
-                    <img
+                    <Image
                       src={member.image}
+                      width={400}
+                      height={400}
                       alt={member.name}
                       className="w-full h-full rounded-full object-cover"
                     />
@@ -215,6 +218,8 @@ const Scholars = () => {
                     <a
                       href={member.facebook}
                       className="text-gray-400 hover:text-green-600 transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label="Facebook"
                     >
                       <Facebook className="w-5 h-5" />
@@ -222,6 +227,8 @@ const Scholars = () => {
                     <a
                       href={member.linkedin}
                       className="text-gray-400 hover:text-green-600 transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label="LinkedIn"
                     >
                       <Linkedin className="w-5 h-5" />
@@ -229,6 +236,8 @@ const Scholars = () => {
                     <a
                       href={member.instagram}
                       className="text-gray-400 hover:text-green-600 transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label="Instagram"
                     >
                       <Instagram className="w-5 h-5" />
@@ -246,46 +255,43 @@ const Scholars = () => {
   return (
     <>
       <section className="bg-green-50">
-        <PageHeader title="Our Team" breadcrumb="Our Team" />
+        <PageHeader title="Our Scholars" breadcrumb="Our Scholars" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start pb-5">
             <div className="flex flex-col items-start">
-              <img
+              <Image
                 src="/abdirahin.JPG"
+                width={700}
+                height={700}
                 alt="Dr. Yahya Suufi"
                 className="rounded-lg shadow-xl"
               />
               <h2 className="text-4xl font-serif font-bold text-gray-900 mt-6">
-                Dr. Ahmed Nuur
+                Sheikh Abdirahin Albadri
               </h2>
-              <p className="text-green-600 font-medium">
-                Executive Director & Scholar
-              </p>
+              <p className="text-green-600 font-medium">Executive & Scholar</p>
             </div>
             <div className="space-y-6">
               <p className="text-gray-600">
-                Dr. Ahmed Nuur was born in Somalia where he completed
-                Memorization of the Holy Quran at the age of [9], as has been a
-                customary tradition in the upbringing of children in Somalia.
-                While he was a teenager, his family gained refugee status in the
-                United States due to the civil war raging in Somalia, and he and
-                his family were relocated to Seattle, Washington where - as one
-                of the few members of the local community who had memorized the
-                entire Quran - he was appointed to be the Imam of the Islamic
-                Center of Tacoma, although he was still in high school. During
-                this time he graduated from Stadium High School in Tacoma,
-                Washington.
+                Sheikh Abdirahin Albadri was born in Baidoa, Somalia, where he
+                completed the memorization of the Holy Quran at the age of 11,
+                continuing the rich tradition of Quranic education in his
+                community. His family moved to the United States and settled in
+                Seattle, Washington. Currently, he serves as a Technical Support
+                Engineer for Microsoft Azure Cloud Computing, while
+                simultaneously continuing to serve his community as an Imam at
+                Alhuda Islamic Center, leading prayers and delivering Friday
+                khutbahs.
               </p>
               <p className="text-gray-600">
-                After graduating from high school and having experienced
-                instances where he realized a need for a level of Islamic
-                understanding and knowledge he did not have, Dr. Ahmed Nuur
-                decided to seek Islamic knowledge and began advancing his
-                Islamic understanding by attending the Institute of Islamic and
-                Arabic Sciences (IIASA) in Fairfax, Virginia (a campus of the
-                Imam Muhammad Ibn Saud Islamic University in Riyadh, Saudi
-                Arabia) for 3 years.
+                Pursuing his passion for knowledge and service, Sheikh Abdirahin
+                graduated from the University of Washington with a Bachelor of
+                Science in Information Technology. Through his dual roles in
+                technology and religious leadership, he bridges professional
+                excellence with spiritual guidance, inspiring both young Muslims
+                and professionals in the Seattle area to pursue meaningful
+                personal and professional development.
               </p>
             </div>
           </div>
@@ -321,11 +327,7 @@ const Scholars = () => {
       </section>
       {/* Team Sections */}
       {Object.entries(teams).map(([key, { title, members }]) => (
-        <TeamSection
-          key={key}
-          title={title}
-          members={members}
-        />
+        <TeamSection key={key} title={title} members={members} />
       ))}
 
       {/* No Results Message */}

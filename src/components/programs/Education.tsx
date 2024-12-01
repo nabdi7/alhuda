@@ -16,9 +16,9 @@ const Education = () => {
     {
       title: "Quran Hifdh",
       description:
-        "Learn proper Tajweed and Quranic recitation techniques in an engaging class setting.",
+        "Learn proper Tajweed and Quran recitation techniques in an engaging class setting.",
       time: "Saturday & Sunday, 10:00 AM - 11:30 AM",
-      registerLink: "/register/quran",
+      registerLink: "",
       level: "All Ages",
     },
     {
@@ -26,7 +26,7 @@ const Education = () => {
       description:
         "Develop a strong foundation in reading, writing, and speaking Arabic in a structured environment.",
       time: "Saturday & Sunday, 2:00 PM - 3:30 PM",
-      registerLink: "/register/arabic",
+      registerLink: "",
       level: "All Levels",
     },
     {
@@ -34,7 +34,7 @@ const Education = () => {
       description:
         "Understand the deeper meanings of the Quran with our comprehensive Tafsir classes.",
       time: "Saturday & Sunday, 4:00 PM - 5:30 PM",
-      registerLink: "/register/tafsir",
+      registerLink: "",
       level: "All Levels",
     },
   ];

@@ -1,5 +1,5 @@
 import React from "react";
-
+import Image from "next/image";
 const WhatsAppCTA = () => {
   const whatsappLink = "";
 
@@ -36,8 +36,10 @@ const WhatsAppCTA = () => {
               <div className="relative bg-white rounded-3xl shadow-xl p-8">
                 <div className="space-y-6">
                   <div className="flex justify-center">
-                    <img
+                    <Image
                       src="/qr.png"
+                      width={400}
+                      height={400}
                       alt="WhatsApp Group QR Code"
                       className="w-full max-w-[256px] h-auto"
                     />

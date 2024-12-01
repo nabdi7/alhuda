@@ -9,6 +9,8 @@ import {
   Wallet,
 } from "lucide-react";
 import PageHeader from "../header/PageHeader";
+import Image from "next/image";
+
 const PaymentMethodCard = ({ icon, title, qrCodeSrc, number }) => {
   const [copied, setCopied] = useState(false);
 
@@ -26,12 +28,13 @@ const PaymentMethodCard = ({ icon, title, qrCodeSrc, number }) => {
       </div>
 
       <div className="flex flex-col space-y-4">
-        {/* Conditionally render QR code section only if qrCodeSrc exists */}
         {qrCodeSrc && (
           <div className="flex justify-center items-center bg-gray-50 rounded-xl p-3">
             <div className="w-48 h-48 bg-white p-3 rounded-xl shadow-md">
-              <img
+              <Image
                 src={qrCodeSrc}
+                width={400}
+                height={400}
                 alt={`${title} QR Code`}
                 className="w-full h-full object-contain"
               />
@@ -43,7 +46,9 @@ const PaymentMethodCard = ({ icon, title, qrCodeSrc, number }) => {
           <div className="bg-gray-50 rounded-xl p-3 flex items-center justify-between">
             <div>
               <p className="text-xs text-gray-600 mb-1">Payment Details</p>
-              <p className="text-sm font-medium text-gray-800 whitespace-pre-line">{number}</p>
+              <p className="text-sm font-medium text-gray-800 whitespace-pre-line">
+                {number}
+              </p>
             </div>
             <button
               onClick={handleCopy}
@@ -57,9 +62,9 @@ const PaymentMethodCard = ({ icon, title, qrCodeSrc, number }) => {
             </button>
           </div>
           <p className="text-xs text-gray-500">
-            {title === 'Cheque' 
-              ? 'For cheque, please mail to the provided address' 
-              : 'Scan QR or use provided details for donation'}
+            {title === "Cheque"
+              ? "For cheque, please mail to the provided address"
+              : "Scan QR or use provided details for donation"}
           </p>
         </div>
       </div>
@@ -150,7 +155,7 @@ const DonationPage = () => {
       icon: <CreditCard className="w-10 h-10 text-green-600" />,
       title: "PayPal",
       qrCodeSrc: "/qr.png",
-      number: "donations@alhudacenter.org",
+      number: "Coming soon",
     },
     {
       icon: <Wallet className="w-10 h-10 text-green-600" />,
@@ -161,7 +166,7 @@ const DonationPage = () => {
     {
       icon: <Check className="w-10 h-10 text-green-600" />,
       title: "Cheque",
-      qrCodeSrc: "", // Remove QR code
+      qrCodeSrc: "",
       number: "Al-Huda Islamic Center\n25650 101st Ave SE \nKent, WA 98030",
     },
   ];

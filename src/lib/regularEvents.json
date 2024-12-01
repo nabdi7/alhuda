@@ -1,100 +1,12 @@
 {
     "events": {
       "2024": {
-        "1": {  
-          "15": [
-            {
-              "time": "6:00 pm - 7:30 pm",
-              "title": "ELEMENTARY ARABIC",
-              "image": "/board2.jpg"
-            }
-          ]
-        },
-        "2": {  
-          "5": [
-            {
-              "time": "7:00 pm - 8:30 pm",
-              "title": "ISLAMIC HISTORY LECTURE",
-              "image": "/front.jpeg"
-            }
-          ]
-        },
-        "8": {  
-          "5": [
-            {
-              "time": "7:00 pm - 8:30 pm",
-              "title": "ISLAMIC HISTORY LECTURE",
-              "image": "/front.jpeg"
-            }
-          ]
-        },
-        "9": {  
-          "5": [
-            {
-              "time": "7:00 pm - 8:30 pm",
-              "title": "ISLAMIC HISTORY LECTURE",
-              "image": "/front.jpeg"
-            }
-          ]
-        },
-        "10": {  
-          "3": [
-            {
-              "time": "7:00 pm - 8:30 pm",
-              "title": "ISLAMIC HISTORY LECTURE",
-              "image": "/front.jpeg"
-            }
-          ]
-        },
         "11": {
-          "15": [
-            {
-              "time": "6:00 pm - 7:30 pm",
-              "title": "Testing November",
-              "image": "/najib.jpg"
-            }
-          ],
-          "21": [
-            {
-              "time": "6:00 pm - 7:30 pm",
-              "title": "Testing November T",
-              "image": "/board2.jpg"
-            }
-          ],
           "24": [
             {
               "time": "6:00 pm - 7:30 pm",
-              "title": "Testing November",
+              "title": "Halaqah",
               "image": "/abdirahin.JPG"
-            }
-          ]
-        },
-        "12": {  
-          "12": [
-            {
-              "time": "7:00 pm - 8:30 pm",
-              "title": "ISLAMIC HISTORY LECTURE",
-              "image": "/najib.jpg"
-            }
-          ]
-        }
-      },
-      "2025": {
-        "1": {  
-          "15": [
-            {
-              "time": "6:00 pm - 7:30 pm",
-              "title": "ELEMENTARY ARABIC",
-              "image": "/board2.jpg"
-            }
-          ]
-        },
-        "2": {  
-          "5": [
-            {
-              "time": "7:00 pm - 8:30 pm",
-              "title": "ISLAMIC HISTORY LECTURE",
-              "image": "/board2.jpg"
             }
           ]
         }

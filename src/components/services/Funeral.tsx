@@ -20,7 +20,7 @@ const Funeral = () => {
           <div className="p-6">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="tel:+15551234567"
+                href="tel:+12536322310"
                 className="flex items-center gap-2 bg-white text-emerald-900 px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-colors w-full sm:w-auto justify-center"
               >
                 <Phone className="h-5 w-5" />

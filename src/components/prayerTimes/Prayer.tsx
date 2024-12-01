@@ -30,10 +30,9 @@ const PrayerTimes = () => {
   useEffect(() => {
     const fetchPrayerTimes = async () => {
       try {
-        // Kent, WA coordinates
         const latitude = "47.3809";
         const longitude = "-122.2348";
-        const method = "2"; // Islamic Society of North America (ISNA)
+        const method = "2";
         const currentTimestamp = Math.floor(currentDate.getTime() / 1000);
 
         const response = await fetch(
@@ -64,8 +63,8 @@ const PrayerTimes = () => {
         ];
 
         const fridayPrayers = [
-          { name: "Jumua", time: "12:00 PM" },
-          { name: "Jumua", time: "1:00 PM" },
+          { name: "Jumu'ah", time: "1:00 PM" },
+          { name: "Jumu'ah", time: "2:00 PM" },
         ];
 
         setPrayerTimes(times);
@@ -216,7 +215,7 @@ const PrayerTimes = () => {
                         >
                           <div className="flex items-center space-x-3">
                             <h4 className="text-gray-700 font-medium">
-                              Jumuah {index + 1}
+                              {index === 0 ? "1st" : "2nd"} Prayer
                             </h4>
                           </div>
                           <p className="text-xl font-bold text-green-600">
@@ -230,9 +229,6 @@ const PrayerTimes = () => {
               </div>
             )}
           </div>
-          {/* <div className="p-6 bg-gradient-to-r from-green-500 to-green-600 text-center">
-            <p className="text-sm text-green-800"></p>
-          </div> */}
         </div>
       </div>
     </section>

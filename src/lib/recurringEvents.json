@@ -3,30 +3,30 @@
       {
         "type": "weekly",
         "dayOfWeek": 5,
-        "time": "12:00 pm",
+        "time": "1:00 pm",
         "title": "Jumu'ah 1st Prayer",
-        "image": "/najib.jpg"
+        "image": "/interior2.jpeg"
       },
       {
         "type": "weekly",
         "dayOfWeek": 5,
-        "time": "1:00 pm",
+        "time": "2:00 pm",
         "title": "Jumu'ah 2nd Prayer",
-        "image": "/najib.jpg"
+        "image": "/front.jpeg"
       },
       {
         "type": "weekly",
         "dayOfWeek": 6,
         "time": "9:30 am - 12:30 pm",
         "title": "Weekend Islamic School",
-        "image": "/abdirahin.JPG"
+        "image": "/interior3.jpeg"
       },
       {
         "type": "weekly",
         "dayOfWeek": 6,
         "time": "12:45 pm - 3:45 pm",
         "title": "Weekend Islamic School",
-        "image": "/najib.jpg"
+        "image": "/interior3.jpeg"
       }
     ]
   }
