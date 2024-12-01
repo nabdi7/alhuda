@@ -8,8 +8,45 @@ import {
   BookOpen,
 } from "lucide-react";
 
-const Announcement = () => {
-  const announcements = [
+// Define interfaces for type safety
+interface Alert {
+  message: string;
+}
+
+interface Schedule {
+  days: string;
+  times: string;
+}
+
+interface Program {
+  name: string;
+  time: string;
+  levels?: string[];
+  topics?: string[];
+}
+
+interface RamadanTimes {
+  taraweeh?: string;
+  tahajud?: string;
+}
+
+interface Announcement {
+  id: number;
+  title: string;
+  type: "regular" | "dugsi" | "ramadan" | "eid";
+  times?: string[] | RamadanTimes;
+  alert?: Alert;
+  schedule?: Schedule;
+  location?: string;
+  programs?: Program[];
+  subtitle?: string;
+  date?: string;
+  description?: string;
+  additionalInfo?: string | string[];
+}
+
+const Announcement: React.FC = () => {
+  const announcements: Announcement[] = [
     {
       id: 1,
       title: "Friday Prayer Times",
@@ -78,18 +115,27 @@ const Announcement = () => {
     // },
   ];
 
-  const renderPrayerTimes = (announcement) => {
-    if (announcement.type === "ramadan") {
+  const renderPrayerTimes = (announcement: Announcement) => {
+    if (
+      announcement.type === "ramadan" &&
+      announcement.times &&
+      typeof announcement.times !== "string"
+    ) {
+      const ramadanTimes = announcement.times as RamadanTimes;
       return (
         <>
-          <div className="flex items-center gap-1">
-            <Clock className="h-4 w-4" />
-            <span>Taraweeh Starts: {announcement.times.taraweeh}</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <Clock className="h-4 w-4" />
-            <span>Tahajud Starts: {announcement.times.tahajud}</span>
-          </div>
+          {ramadanTimes.taraweeh && (
+            <div className="flex items-center gap-1">
+              <Clock className="h-4 w-4" />
+              <span>Taraweeh Starts: {ramadanTimes.taraweeh}</span>
+            </div>
+          )}
+          {ramadanTimes.tahajud && (
+            <div className="flex items-center gap-1">
+              <Clock className="h-4 w-4" />
+              <span>Tahajud Starts: {ramadanTimes.tahajud}</span>
+            </div>
+          )}
         </>
       );
     }
@@ -109,7 +155,7 @@ const Announcement = () => {
     );
   };
 
-  const renderSpecialMessage = (announcement) => {
+  const renderSpecialMessage = (announcement: Announcement) => {
     if (announcement.type === "ramadan" || announcement.type === "eid") {
       return (
         <div className="space-y-3 mb-4">
@@ -125,20 +171,21 @@ const Announcement = () => {
           <p className="text-gray-600 text-sm italic">
             {announcement.description}
           </p>
-          {announcement.type === "eid" && announcement.additionalInfo && (
-            <div className="mt-4 bg-green-50 rounded-lg p-4">
-              <h5 className="font-medium text-green-800 mb-2">
-                Important Information:
-              </h5>
-              <ul className="list-disc pl-4 space-y-1">
-                {announcement.additionalInfo.map((info, index) => (
-                  <li key={index} className="text-sm text-green-700">
-                    {info}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+          {announcement.type === "eid" &&
+            Array.isArray(announcement.additionalInfo) && (
+              <div className="mt-4 bg-green-50 rounded-lg p-4">
+                <h5 className="font-medium text-green-800 mb-2">
+                  Important Information:
+                </h5>
+                <ul className="list-disc pl-4 space-y-1">
+                  {announcement.additionalInfo.map((info, index) => (
+                    <li key={index} className="text-sm text-green-700">
+                      {info}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
         </div>
       );
     }
@@ -149,11 +196,11 @@ const Announcement = () => {
           <div className="flex flex-wrap gap-4 text-sm text-gray-600">
             <div className="flex items-center gap-1">
               <Calendar className="h-4 w-4" />
-              <span>{announcement.schedule.days}</span>
+              <span>{announcement.schedule?.days}</span>
             </div>
             <div className="flex items-center gap-1">
               <Clock className="h-4 w-4" />
-              <span>{announcement.schedule.times}</span>
+              <span>{announcement.schedule?.times}</span>
             </div>
             {announcement.location && (
               <div className="flex items-center gap-1">
@@ -165,7 +212,7 @@ const Announcement = () => {
 
           <div className="bg-green-50 rounded-lg p-4">
             <div className="space-y-4">
-              {announcement.programs.map((program, index) => (
+              {announcement.programs?.map((program, index) => (
                 <div
                   key={index}
                   className="border-b border-green-100 last:border-0 pb-3 last:pb-0"

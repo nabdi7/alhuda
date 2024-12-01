@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import {
   ChevronLeft,
   ChevronRight,
@@ -7,11 +7,45 @@ import {
   Clock,
   CalendarDays,
 } from "lucide-react";
-import recurringEventsData from "../../lib/recurringEvents.json";
-import regularEventsData from "../../lib/regularEvents.json";
-import PageHeader from "../header/PageHeader";
 import Image from "next/image";
-const EventCard = ({ date, title, image, time }) => (
+import PageHeader from "../header/PageHeader";
+interface Event {
+  title: string;
+  time?: string;
+  image?: string;
+  recurring?: boolean;
+  type?: "weekly" | "monthly" | "yearly";
+  dayOfWeek?: number;
+}
+
+interface CalendarDay {
+  day: number;
+  currentMonth: boolean;
+  date: Date;
+}
+
+interface RegularEventsData {
+  events: {
+    [year: string]: {
+      [month: string]: {
+        [day: string]: Event[];
+      };
+    };
+  };
+}
+
+interface RecurringEventsData {
+  events: Event[];
+}
+
+interface EventCardProps {
+  date: string;
+  title: string;
+  image?: string;
+  time?: string;
+}
+
+const EventCard: React.FC<EventCardProps> = ({ date, title, image, time }) => (
   <div
     className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 
     hover:shadow-xl hover:-translate-y-2 group"
@@ -51,11 +85,18 @@ const EventCard = ({ date, title, image, time }) => (
   </div>
 );
 
-const EventsPage = () => {
-  const [currentMonth, setCurrentMonth] = useState(new Date());
-  const [selectedDate, setSelectedDate] = useState(new Date().getDate());
+const recurringEventsData =
+  require("../../lib/recurringEvents.json") as RecurringEventsData;
+const regularEventsData =
+  require("../../lib/regularEvents.json") as RegularEventsData;
 
-  const months = [
+const EventsPage: React.FC = () => {
+  const [currentMonth, setCurrentMonth] = useState<Date>(new Date());
+  const [selectedDate, setSelectedDate] = useState<number>(
+    new Date().getDate()
+  );
+
+  const months: string[] = [
     "January",
     "February",
     "March",
@@ -70,9 +111,9 @@ const EventsPage = () => {
     "December",
   ];
 
-  const daysOfWeek = ["MO", "TU", "WE", "TH", "FR", "SA", "SU"];
+  const daysOfWeek: string[] = ["MO", "TU", "WE", "TH", "FR", "SA", "SU"];
 
-  const getRegularEvents = (date) => {
+  const getRegularEvents = (date: Date): Event[] => {
     const year = date.getFullYear().toString();
     const month = (date.getMonth() + 1).toString();
     const day = date.getDate().toString();
@@ -85,7 +126,7 @@ const EventsPage = () => {
     }
   };
 
-  const getDaysInMonth = (date) => {
+  const getDaysInMonth = (date: Date): CalendarDay[] => {
     const year = date.getFullYear();
     const month = date.getMonth();
     const days = new Date(year, month + 1, 0).getDate();
@@ -93,7 +134,7 @@ const EventsPage = () => {
 
     const mondayBasedFirstDay = firstDay === 0 ? 7 : firstDay;
 
-    const daysArray = [];
+    const daysArray: CalendarDay[] = [];
     for (let i = 1; i < mondayBasedFirstDay; i++) {
       const prevDate = new Date(year, month, 1 - i);
       daysArray.unshift({
@@ -114,10 +155,10 @@ const EventsPage = () => {
     return daysArray;
   };
 
-  const getEventsForDate = (date) => {
+  const getEventsForDate = useCallback((date: Date): Event[] => {
     if (!date) return [];
 
-    const events = [];
+    const events: Event[] = [];
 
     // Get regular events for the specific date
     const regularEvents = getRegularEvents(date);
@@ -138,7 +179,7 @@ const EventsPage = () => {
     });
 
     return events;
-  };
+  }, []);
 
   const previousMonth = () => {
     setCurrentMonth(
@@ -152,15 +193,14 @@ const EventsPage = () => {
     );
   };
 
-  const handleDateSelect = (day) => {
+  const handleDateSelect = (day: CalendarDay) => {
     if (day.currentMonth) {
       setSelectedDate(day.day);
     }
   };
 
-  // Get upcoming events
-  const getUpcomingEvents = () => {
-    const events = [];
+  const getUpcomingEvents = (): EventCardProps[] => {
+    const events: EventCardProps[] = [];
     const today = new Date();
     const threeMonthsFromNow = new Date();
     threeMonthsFromNow.setMonth(threeMonthsFromNow.getMonth() + 1);
@@ -192,12 +232,13 @@ const EventsPage = () => {
     });
 
     // Sort events by date
-    return events.sort((a, b) => new Date(a.date) - new Date(b.date));
+    return events.sort(
+      (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+    );
   };
 
-  // Get previous events
-  const getPreviousEvents = () => {
-    const events = [];
+  const getPreviousEvents = (): EventCardProps[] => {
+    const events: EventCardProps[] = [];
     const today = new Date();
 
     // Get the first day of the previous month
@@ -233,7 +274,9 @@ const EventsPage = () => {
     });
 
     // Sort events by date in descending order
-    return events.sort((a, b) => new Date(b.date) - new Date(a.date));
+    return events.sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
   };
 
   // Memoized event calculations
@@ -246,7 +289,7 @@ const EventsPage = () => {
           selectedDate
         )
       ),
-    [currentMonth, selectedDate]
+    [currentMonth, selectedDate, getEventsForDate]
   );
 
   const upcomingEvents = useMemo(() => getUpcomingEvents(), []);
