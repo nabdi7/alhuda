@@ -10,7 +10,7 @@ import Cta from "../cta/Cta";
 import PageHeader from "../header/PageHeader";
 
 const Education = () => {
-  const [hoveredClass, setHoveredClass] = useState(null);
+  const [hoveredClass, setHoveredClass] = useState<number | null>(null);
 
   const classDetails = [
     {

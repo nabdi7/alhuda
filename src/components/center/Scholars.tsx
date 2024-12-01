@@ -12,11 +12,28 @@ import {
 import PageHeader from "../header/PageHeader";
 import Image from "next/image";
 
-const Scholars = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [filter, setFilter] = useState("all");
+type TeamMember = {
+  name: string;
+  role: string;
+  image: string;
+  facebook: string;
+  linkedin: string;
+  instagram: string;
+  email: string;
+  phone: string;
+  department: string;
+};
 
-  const teams = {
+type Team = {
+  title: string;
+  members: TeamMember[];
+};
+
+const Scholars = () => {
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [filter, setFilter] = useState<string>("all");
+
+  const teams: Record<string, Team> = {
     // board: {
     //   title: "Board Members",
     //   members: [
@@ -130,15 +147,15 @@ const Scholars = () => {
   };
 
   // Get all unique departments across all teams
-  const allDepartments = [
-    ...new Set(
+  const allDepartments = Array.from(
+    new Set(
       Object.values(teams)
         .flatMap((team) => team.members)
         .map((member) => member.department)
-    ),
-  ];
+    )
+  );
 
-  const filterMembers = (members) => {
+  const filterMembers = (members: TeamMember[]): TeamMember[] => {
     return members.filter((member) => {
       const matchesSearch =
         member.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -149,14 +166,17 @@ const Scholars = () => {
   };
 
   // Function to get section title based on filter
-  const getSectionTitle = (originalTitle) => {
+  const getSectionTitle = (originalTitle: string): string => {
     if (filter === "all") {
       return originalTitle;
     }
     return `${filter.charAt(0).toUpperCase() + filter.slice(1)}`;
   };
 
-  const TeamSection = ({ title, members }) => {
+  const TeamSection: React.FC<{ title: string; members: TeamMember[] }> = ({
+    title,
+    members,
+  }) => {
     const filteredMembers = filterMembers(members);
 
     // Only render section if it has members matching the current filters

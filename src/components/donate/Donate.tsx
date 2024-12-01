@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, FormEvent, ChangeEvent, ReactNode } from "react";
 import {
   QrCode,
   CreditCard,
@@ -11,10 +11,35 @@ import {
 import PageHeader from "../header/PageHeader";
 import Image from "next/image";
 
-const PaymentMethodCard = ({ icon, title, qrCodeSrc, number }) => {
-  const [copied, setCopied] = useState(false);
+interface PaymentMethodCardProps {
+  icon: ReactNode;
+  title: string;
+  qrCodeSrc?: string;
+  number: string;
+}
 
-  const handleCopy = () => {
+interface DonationFormState {
+  amount: string;
+  name: string;
+  email: string;
+}
+
+interface PaymentMethod {
+  icon: ReactNode;
+  title: string;
+  qrCodeSrc: string | "";
+  number: string;
+}
+
+const PaymentMethodCard: React.FC<PaymentMethodCardProps> = ({
+  icon,
+  title,
+  qrCodeSrc,
+  number,
+}) => {
+  const [copied, setCopied] = useState<boolean>(false);
+
+  const handleCopy = (): void => {
     navigator.clipboard.writeText(number);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -72,14 +97,24 @@ const PaymentMethodCard = ({ icon, title, qrCodeSrc, number }) => {
   );
 };
 
-const DonationForm = () => {
-  const [amount, setAmount] = useState("");
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+const DonationForm: React.FC = () => {
+  const [donationState, setDonationState] = useState<DonationFormState>({
+    amount: "",
+    name: "",
+    email: "",
+  });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    console.log("Donation submitted", { amount, name, email });
+    console.log("Donation submitted", donationState);
+  };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
+    const { name, value } = e.target;
+    setDonationState((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   return (
@@ -98,8 +133,9 @@ const DonationForm = () => {
             </div>
             <input
               type="number"
-              value={amount}
-              onChange={(e) => setAmount(e.target.value)}
+              name="amount"
+              value={donationState.amount}
+              onChange={handleChange}
               placeholder="Enter amount"
               required
               className="pl-10 block w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all"
@@ -112,8 +148,9 @@ const DonationForm = () => {
           </label>
           <input
             type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            name="name"
+            value={donationState.name}
+            onChange={handleChange}
             placeholder="Your full name"
             required
             className="block w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all"
@@ -125,8 +162,9 @@ const DonationForm = () => {
           </label>
           <input
             type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            name="email"
+            value={donationState.email}
+            onChange={handleChange}
             placeholder="your.email@example.com"
             required
             className="block w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all"
@@ -143,8 +181,8 @@ const DonationForm = () => {
   );
 };
 
-const DonationPage = () => {
-  const paymentMethods = [
+const DonationPage: React.FC = () => {
+  const paymentMethods: PaymentMethod[] = [
     {
       icon: <QrCode className="w-10 h-10 text-green-600" />,
       title: "Zelle",
@@ -191,7 +229,6 @@ const DonationPage = () => {
             ))}
           </div>
 
-          {/* Donation Form */}
           {/* <div className="max-w-2xl mx-auto w-full">
             <DonationForm />
           </div> */}

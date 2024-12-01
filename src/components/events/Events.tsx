@@ -1,12 +1,39 @@
 "use client";
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight, CalendarDays } from "lucide-react";
-import recurringEventsData from "../../lib/recurringEvents.json";
-import regularEventsData from "../../lib/regularEvents.json";
+// import recurringEventsData from "../../lib/recurringEvents.json";
+// import regularEventsData from "../../lib/regularEvents.json";
+
+type RecurringEvent = {
+  type: "weekly" | "monthly";
+  dayOfWeek?: number;
+  time: string;
+  title: string;
+};
+
+type RegularEvents = {
+  [year: string]: {
+    [month: string]: {
+      [day: string]: {
+        time: string;
+        title: string;
+      }[];
+    };
+  };
+};
+
+const recurringEventsData: {
+  events: RecurringEvent[];
+} = require("../../lib/recurringEvents.json");
+const regularEventsData: {
+  events: RegularEvents;
+} = require("../../lib/regularEvents.json");
 
 const Events = () => {
-  const [currentMonth, setCurrentMonth] = useState(new Date());
-  const [selectedDate, setSelectedDate] = useState(new Date().getDate());
+  const [currentMonth, setCurrentMonth] = useState<Date>(new Date());
+  const [selectedDate, setSelectedDate] = useState<number>(
+    new Date().getDate()
+  );
 
   const months = [
     "January",
@@ -25,7 +52,7 @@ const Events = () => {
 
   const daysOfWeek = ["MO", "TU", "WE", "TH", "FR", "SA", "SU"];
 
-  const getRegularEvents = (date) => {
+  const getRegularEvents = (date: Date): { time: string; title: string }[] => {
     const year = date.getFullYear().toString();
     const month = (date.getMonth() + 1).toString();
     const day = date.getDate().toString();
@@ -38,14 +65,16 @@ const Events = () => {
     }
   };
 
-  const getDaysInMonth = (date) => {
+  const getDaysInMonth = (
+    date: Date
+  ): { day: number; currentMonth: boolean; date: Date }[] => {
     const year = date.getFullYear();
     const month = date.getMonth();
     const days = new Date(year, month + 1, 0).getDate();
     const firstDay = new Date(year, month, 1).getDay();
     const mondayBasedFirstDay = firstDay === 0 ? 7 : firstDay;
 
-    const daysArray = [];
+    const daysArray: { day: number; currentMonth: boolean; date: Date }[] = [];
     for (let i = 1; i < mondayBasedFirstDay; i++) {
       const prevDate = new Date(year, month, 1 - i);
       daysArray.unshift({
@@ -66,10 +95,12 @@ const Events = () => {
     return daysArray;
   };
 
-  const getEventsForDate = (date) => {
+  const getEventsForDate = (
+    date: Date | null
+  ): { time: string; title: string; recurring?: boolean }[] => {
     if (!date) return [];
 
-    const events = [];
+    const events: { time: string; title: string; recurring?: boolean }[] = [];
 
     const regularEvents = getRegularEvents(date);
     events.push(...regularEvents);
@@ -102,7 +133,11 @@ const Events = () => {
     );
   };
 
-  const handleDateSelect = (day) => {
+  const handleDateSelect = (day: {
+    day: number;
+    currentMonth: boolean;
+    date: Date;
+  }) => {
     if (day.currentMonth) {
       setSelectedDate(day.day);
     }
@@ -189,7 +224,7 @@ const Events = () => {
                 className="text-gray-600 hover:text-green-700 
                 p-2 hover:bg-green-50 rounded-full 
                 transition-colors"
-                >
+              >
                 <ChevronLeft className="w-6 h-6" />
               </button>
 
@@ -202,7 +237,7 @@ const Events = () => {
                 className="text-gray-600 hover:text-green-700 
                 p-2 hover:bg-green-50 rounded-full 
                 transition-colors"
-                >
+              >
                 <ChevronRight className="w-6 h-6" />
               </button>
             </div>

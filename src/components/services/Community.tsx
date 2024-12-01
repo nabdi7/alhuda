@@ -81,7 +81,9 @@ const Community = () => {
 
   const categories = [
     "All",
-    ...new Set(supportResources.map((resource) => resource.category)),
+    ...Array.from(
+      new Set(supportResources.map((resource) => resource.category))
+    ),
   ];
 
   const filteredResources =
@@ -166,7 +168,6 @@ const Community = () => {
                     ))}
                   </div>
 
-                  {/* Website Link */}
                   {resource.website && (
                     <a
                       href={resource.website}
