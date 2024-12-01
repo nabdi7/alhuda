@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Clock } from "lucide-react";
 import PageHeader from "../header/PageHeader";
-import Prayer from "./Prayer";
+import Image from "next/image";
 interface PrayerTime {
   name: string;
   time: string;
@@ -129,10 +129,14 @@ const PrayerTimes = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <div className="flex justify-center mb-6">
-              <img
+              <Image
                 src="/pic9.webp"
                 alt="Man praying"
+                width={0}
+                height={0}
+                sizes="100vw"
                 className="max-w-full h-auto"
+                style={{ width: "100%", height: "auto" }}
               />
             </div>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto italic">

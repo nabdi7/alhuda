@@ -1,6 +1,7 @@
 import React from "react";
 import { Book, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const AboutUs = () => {
   return (
@@ -33,8 +34,10 @@ const AboutUs = () => {
           {/* Right Content */}
           <div className="relative">
             <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
-              <img
+              <Image
                 src="/front.jpeg"
+                width={400}
+                height={400}
                 alt="Mosque Community"
                 className="w-full h-full object-cover"
               />

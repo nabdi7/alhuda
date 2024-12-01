@@ -25,9 +25,9 @@ const NewMuslim = () => {
                 verse from Surah Al-Ikhlas (112:1-4):
               </p>
               <blockquote className="border-l-4 border-green-800 pl-4 italic text-gray-700 mb-4">
-                "Say: He is Allah, the One and Only; Allah, the Eternal,
+                &quot;Say: He is Allah, the One and Only; Allah, the Eternal,
                 Absolute; He begets not, nor is He begotten; And there is none
-                like unto Him."
+                like unto Him.&quot;
               </blockquote>
               <p className="text-lg text-gray-700 mb-4">
                 This powerful declaration emphasizes the fundamental principle
@@ -50,8 +50,8 @@ const NewMuslim = () => {
               <p className="text-lg text-gray-700 mb-4">
                 The core message of Islam is fundamentally about submission to
                 the will of Allah, recognizing His supreme authority, and
-                understanding humanity's role as His vicegerents on earth. This
-                message transcends mere ritualistic worship, calling for a
+                understanding humanity&apos;s role as His vicegerents on earth.
+                This message transcends mere ritualistic worship, calling for a
                 complete transformation of individual and collective human
                 behavior.
               </p>
@@ -60,7 +60,8 @@ const NewMuslim = () => {
                 Az-Zariyat (51:56):
               </p>
               <blockquote className="border-l-4 border-green-800 pl-4 italic text-gray-700 mb-4">
-                "I did not create the jinn and humans except to worship Me."
+                &quot;I did not create the jinn and humans except to worship
+                Me.&quot;
               </blockquote>
               <p className="text-lg text-gray-700 mb-4">
                 This divine instruction reveals a profound purpose: human
@@ -92,9 +93,9 @@ const NewMuslim = () => {
               <ol className="list-decimal pl-8 text-lg text-gray-700 space-y-4">
                 <li>
                   <strong>Shahada (Declaration of Faith):</strong> The
-                  foundational testimony that "There is no god but Allah, and
-                  Muhammad is His messenger." This declaration represents the
-                  core belief and entry point into Islam.
+                  foundational testimony that &quot;There is no god but Allah,
+                  and Muhammad is His messenger.&quot; This declaration
+                  represents the core belief and entry point into Islam.
                 </li>
                 <li>
                   <strong>Salah (Prayer):</strong> Performing five daily prayers
@@ -132,7 +133,7 @@ const NewMuslim = () => {
               <p className="text-lg text-gray-700 mb-4">
                 For those new to Islam, approaching the Quran may seem
                 challenging. It is recommended to begin with translations in
-                one's native language and seek guidance from knowledgeable
+                one&apos;s native language and seek guidance from knowledgeable
                 scholars. The Quran is not meant to be a text that is merely
                 read, but deeply understood, reflected upon, and applied in
                 daily life.
