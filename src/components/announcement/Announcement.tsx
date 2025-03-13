@@ -53,7 +53,7 @@ const Announcement: React.FC = () => {
       times: ["1:00 PM", "2:00 PM"],
       alert: {
         message:
-          "Due to Daylight Saving Time, all prayer times will be pushed back by one hour starting November 3rd 2024",
+          "Due to Daylight Saving Time, all prayer times will be forward by one hour starting March 9th 2025",
       },
       type: "regular",
     },
@@ -83,21 +83,21 @@ const Announcement: React.FC = () => {
         },
       ],
     },
-    // {
-    //   id: 3,
-    //   title: "Ramadhan 2025",
-    //   subtitle: "Ramadan Mubarak",
-    //   date: "March 1st, 2025",
-    //   description:
-    //     "May this blessed month bring peace, prosperity and happiness to all.",
-    //   times: {
-    //     taraweeh: "8:30 PM",
-    //     tahajud: "1:00 PM",
-    //   },
-    //   additionalInfo:
-    //     "Please bring your prayer mats. Light breakfast will be served after each prayer.",
-    //   type: "ramadan",
-    // },
+    {
+      id: 3,
+      title: "Ramadan 2025",
+      subtitle: "Ramadan Mubarak",
+      date: "March 1st, 2025",
+      description:
+        "May this blessed month bring peace, prosperity and happiness to all.",
+      times: {
+        taraweeh: "8:50 PM",
+        tahajud: "1:00 AM",
+      },
+      // additionalInfo:
+      //   "Please bring your prayer mats. Light breakfast will be served after each prayer.",
+      type: "ramadan",
+    },
     // {
     //   id: 4,
     //   title: "Eid ul-Fitr 2025 Prayer Times",
