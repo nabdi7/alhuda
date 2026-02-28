@@ -3,7 +3,8 @@ import Hero from "@/components/hero/Hero";
 import Announcement from "@/components/announcement/Announcement";
 import PrayerTimes from "@/components/prayerTimes/Prayer";
 import Events from "@/components/events/Events";
-import WhatsApp from "@/components/cta/WhatsApp";
+// import WhatsApp from "@/components/cta/WhatsApp";
+import AppDownloadCTA from "@/components/cta/AppDownloadCTA";
 import AboutUs from "@/components/center/AboutUs";
 import SermonsSection from "@/components/center/Sermons";
 export default function Home() {
@@ -15,7 +16,8 @@ export default function Home() {
       <SermonsSection />
       <PrayerTimes />
       <Events />
-      <WhatsApp />
+      {/* <WhatsApp /> */}
+      <AppDownloadCTA />
     </main>
   );
 }

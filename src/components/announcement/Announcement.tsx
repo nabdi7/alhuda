@@ -50,19 +50,19 @@ const Announcement: React.FC = () => {
     {
       id: 1,
       title: "Friday Prayer Times",
-      times: ["1:00 PM", "2:00 PM"],
+      times: ["12:45 PM", "1:30 PM"],
       alert: {
         message:
-          "Due to Daylight Saving Time, all prayer times will be forward by one hour starting March 9th 2025",
+          "Due to Daylight Saving Time, all prayer times will be forward by one hour starting March 8th 2026",
       },
       type: "regular",
     },
     {
       id: 2,
-      title: "Weekend Islamic School (Dugsi)",
+      title: "Falah Islamic School (Dugsi)",
       type: "dugsi",
       schedule: {
-        days: "Saturday & Sunday",
+        days: "Monday - Thursday",
         times: "9:00 AM - 1:00 PM",
       },
       location: "Alhuda Mosque",
@@ -72,26 +72,26 @@ const Announcement: React.FC = () => {
           time: "9:00 AM - 10:30 AM",
           levels: ["All Ages"],
         },
-        {
-          name: "Islamic Studies",
-          time: "10:45 AM - 11:45 AM",
-          topics: ["Aqeedah", "Fiqh", "Seerah"],
-        },
-        {
-          name: "Arabic Language",
-          time: "12:00 PM - 1:00 PM",
-        },
+        // {
+        //   name: "Islamic Studies",
+        //   time: "10:45 AM - 11:45 AM",
+        //   topics: ["Aqeedah", "Fiqh", "Seerah"],
+        // },
+        // {
+        //   name: "Arabic Language",
+        //   time: "12:00 PM - 1:00 PM",
+        // },
       ],
     },
     {
       id: 3,
-      title: "Ramadan 2025",
+      title: "Ramadan 2026",
       subtitle: "Ramadan Mubarak",
-      date: "March 1st, 2025",
+      date: "February 18th, 2026",
       description:
         "May this blessed month bring peace, prosperity and happiness to all.",
       times: {
-        taraweeh: "8:50 PM",
+        taraweeh: "7:40 PM",
         tahajud: "1:00 AM",
       },
       // additionalInfo:

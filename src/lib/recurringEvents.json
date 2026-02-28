@@ -3,29 +3,22 @@
       {
         "type": "weekly",
         "dayOfWeek": 5,
-        "time": "1:00 pm",
+        "time": "12:45 pm",
         "title": "Jumu'ah 1st Prayer",
         "image": "/interior2.jpeg"
       },
       {
         "type": "weekly",
         "dayOfWeek": 5,
-        "time": "2:00 pm",
+        "time": "1:30 pm",
         "title": "Jumu'ah 2nd Prayer",
         "image": "/front.jpeg"
       },
       {
         "type": "weekly",
-        "dayOfWeek": 6,
-        "time": "9:30 am - 12:30 pm",
-        "title": "Weekend Islamic School",
-        "image": "/interior3.jpeg"
-      },
-      {
-        "type": "weekly",
-        "dayOfWeek": 6,
-        "time": "12:45 pm - 3:45 pm",
-        "title": "Weekend Islamic School",
+        "dayOfWeek": [1, 4],
+        "time": "9:00 am - 1:00 pm",
+        "title": "Falah Islamic School",
         "image": "/interior3.jpeg"
       }
     ]

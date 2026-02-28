@@ -1,10 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import {
-  Clock,
-  ChevronRight,
-  Star,
-} from "lucide-react";
+import { Clock, ChevronRight, Star } from "lucide-react";
 import Link from "next/link";
 import Cta from "../cta/Cta";
 import PageHeader from "../header/PageHeader";
@@ -14,29 +10,37 @@ const Education = () => {
 
   const classDetails = [
     {
-      title: "Quran Hifdh",
+      title: "Falah Islamic School",
       description:
-        "Learn proper Tajweed and Quran recitation techniques in an engaging class setting.",
-      time: "Saturday & Sunday, 10:00 AM - 11:30 AM",
-      registerLink: "",
+        "A full weekday Islamic school program offering Quran, Arabic, and Islamic studies in a structured learning environment.",
+      time: "Monday - Thursday, 9:00 AM - 1:00 PM",
+      registerLink: "https://www.falahacademywa.org/admissions",
       level: "All Ages",
     },
+    // {
+    //   title: "Quran Hifdh",
+    //   description:
+    //     "Learn proper Tajweed and Quran recitation techniques in an engaging class setting.",
+    //   time: "Saturday & Sunday, 10:00 AM - 11:30 AM",
+    //   registerLink: "",
+    //   level: "All Ages",
+    // },
     {
       title: "Arabic Language",
       description:
         "Develop a strong foundation in reading, writing, and speaking Arabic in a structured environment.",
-      time: "Saturday & Sunday, 2:00 PM - 3:30 PM",
-      registerLink: "",
+      time: "Monday - Thursday, 9:00 AM - 1:00 PM",
+      registerLink: "https://www.falahacademywa.org/admissions",
       level: "All Levels",
     },
-    {
-      title: "Tafsir Class",
-      description:
-        "Understand the deeper meanings of the Quran with our comprehensive Tafsir classes.",
-      time: "Saturday & Sunday, 4:00 PM - 5:30 PM",
-      registerLink: "",
-      level: "All Levels",
-    },
+    // {
+    //   title: "Tafsir Class",
+    //   description:
+    //     "Understand the deeper meanings of the Quran with our comprehensive Tafsir classes.",
+    //   time: "Saturday & Sunday, 4:00 PM - 5:30 PM",
+    //   registerLink: "",
+    //   level: "All Levels",
+    // },
   ];
 
   return (
@@ -61,7 +65,6 @@ const Education = () => {
               `}
               >
                 <div className="flex items-center gap-4 mb-4">
-                  
                   <h3 className="text-xl font-bold text-gray-900">
                     {classItem.title}
                   </h3>

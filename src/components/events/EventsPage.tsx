@@ -15,7 +15,7 @@ interface Event {
   image?: string;
   recurring?: boolean;
   type?: "weekly" | "monthly" | "yearly";
-  dayOfWeek?: number;
+  dayOfWeek?: number | [number, number];
 }
 
 interface CalendarDay {
@@ -168,7 +168,12 @@ const EventsPage: React.FC = () => {
     recurringEventsData.events.forEach((event) => {
       if (event.type === "weekly") {
         const mondayBasedDay = date.getDay() === 0 ? 7 : date.getDay();
-        if (mondayBasedDay === event.dayOfWeek) {
+
+        const matches = Array.isArray(event.dayOfWeek)
+          ? mondayBasedDay >= event.dayOfWeek[0] && mondayBasedDay <= event.dayOfWeek[1]
+          : mondayBasedDay === event.dayOfWeek;
+
+        if (matches) {
           events.push({
             time: event.time,
             title: event.title,

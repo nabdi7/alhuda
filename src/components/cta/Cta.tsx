@@ -13,14 +13,14 @@ const Cta = () => {
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:+12536322310"
+                href="tel:+12535080677"
                 className="flex items-center gap-2 bg-white text-green-900 px-6 py-3 rounded-xl hover:bg-green-50 transition-colors"
               >
                 <Phone className="h-5 w-5" />
                 Call Now
               </a>
               <a
-                href="https://maps.app.goo.gl/R3mQDRYq1TF4rcAf6"
+                href="https://maps.app.goo.gl/KdBVv9vVFoNbNu1F6"
                 className="flex items-center gap-2 bg-green-800 text-white px-6 py-3 rounded-xl hover:bg-green-700 transition-colors border border-green-700"
               >
                 <MapPin className="h-5 w-5" />

@@ -57,7 +57,7 @@ const Hero = () => {
                     Quran Classes
                   </h3>
                   <p className="text-sm text-gray-600">
-                    Weekend Islamic School
+                    Falah Islamic School
                   </p>
                 </div>
               </div>

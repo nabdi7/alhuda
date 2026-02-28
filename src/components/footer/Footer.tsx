@@ -16,6 +16,7 @@ const Footer = () => {
     { name: "Events Calendar", href: "/events" },
     { name: "Islamic School", href: "/islamic-school" },
     { name: "Donate", href: "/donate" },
+    { name: "Privacy Policy", href: "/privacy" },
   ];
 
   return (
@@ -49,7 +50,7 @@ const Footer = () => {
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="https://www.instagram.com/alhudakent/"
+                href="https://www.instagram.com/masjidalhudaa_/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-green-600"
@@ -91,25 +92,25 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-green-600" />
                 <a
-                  href="tel:+12536322310"
+                  href="tel:+12535080677"
                   className=" text-gray-600 hover:text-green-600 transition-colors"
                 >
-                  (253) 632-2310
+                  (253) 508-0677
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-green-600" />
                 <a
-                  href="mailto:info@alhudakent.org"
+                  href="mailto:info@alhudakent.com"
                   className=" text-gray-600 hover:text-green-600 transition-colors"
                 >
-                  info@alhudakent.org
+                  info@alhudakent.com
                 </a>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-green-600 mt-0.5" />
                 <a
-                  href="https://maps.app.goo.gl/D7rp4cSxwRF2df8H9"
+                  href="https://maps.app.goo.gl/KdBVv9vVFoNbNu1F6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className=" text-gray-600 hover:text-green-600 transition-colors"

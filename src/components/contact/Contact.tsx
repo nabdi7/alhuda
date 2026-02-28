@@ -13,11 +13,11 @@ const Contact = () => {
               <Phone className="w-6 h-6 text-green-700" />
             </div>
             <h3 className="font-bold mb-2">Phone</h3>
-            <a 
-              href="tel:+12536322310" 
+            <a
+              href="tel:+12535080677"
               className="text-gray-600 hover:text-green-700 transition-colors"
             >
-              (253) 632-2310
+              (253) 507-0677
             </a>
           </div>
 
@@ -26,11 +26,11 @@ const Contact = () => {
               <Mail className="w-6 h-6 text-green-700" />
             </div>
             <h3 className="font-bold mb-2">Email</h3>
-            <a 
-              href="mailto:info@alhudakent.org" 
+            <a
+              href="mailto:info@alhudakent.com"
               className="text-gray-600 hover:text-green-700 transition-colors"
             >
-              info@alhudakent.org
+              info@alhudakent.com
             </a>
           </div>
 
@@ -39,9 +39,9 @@ const Contact = () => {
               <MapPin className="w-6 h-6 text-green-700" />
             </div>
             <h3 className="font-bold mb-2">Address</h3>
-            <a 
-              href="https://maps.app.goo.gl/D7rp4cSxwRF2df8H9" 
-              target="_blank" 
+            <a
+              href="https://maps.app.goo.gl/KdBVv9vVFoNbNu1F6"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-green-700 transition-colors"
             >
@@ -146,7 +146,7 @@ const Contact = () => {
           {/* Map Section */}
           <div className="h-[600px] rounded-[24px] overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2766939.681560598!2d-122.20584699999999!3d47.371171!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54905eb5bf39c87b%3A0xd97531dae44de0bb!2sMasjid%20Al-Hudaa!5e0!3m2!1sen!2sus!4v1731899741353!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2702.090931482147!2d-122.2058445!3d47.3711437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54905fa911d3d299%3A0xebc5b9d16194f91d!2sAl%20Huda%20Islamic%20Center%20of%20Kent!5e0!3m2!1sen!2sus!4v1772317565164!5m2!1sen!2sus"
               width="100%"
               height="100%"
               style={{ border: 0 }}

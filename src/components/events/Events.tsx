@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight, CalendarDays } from "lucide-react";
 
 type RecurringEvent = {
   type: "weekly" | "monthly";
-  dayOfWeek?: number;
+  dayOfWeek?: number | [number, number];
   time: string;
   title: string;
 };
@@ -106,17 +106,23 @@ const Events = () => {
     events.push(...regularEvents);
 
     recurringEventsData.events.forEach((event) => {
-      if (event.type === "weekly") {
-        const mondayBasedDay = date.getDay() === 0 ? 7 : date.getDay();
-        if (mondayBasedDay === event.dayOfWeek) {
-          events.push({
-            time: event.time,
-            title: event.title,
-            recurring: true,
-          });
-        }
-      }
-    });
+  if (event.type === "weekly") {
+    const mondayBasedDay = date.getDay() === 0 ? 7 : date.getDay();
+
+    const matches = Array.isArray(event.dayOfWeek)
+      ? mondayBasedDay >= event.dayOfWeek[0] && mondayBasedDay <= event.dayOfWeek[1]
+      : mondayBasedDay === event.dayOfWeek;
+
+    if (matches) {
+      events.push({
+        time: event.time,
+        title: event.title,
+        recurring: true,
+        // image: event.image,
+      });
+    }
+  }
+});
 
     return events;
   };

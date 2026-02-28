@@ -74,7 +74,7 @@ const Marriage = () => {
               {
                 title: "Contact Information",
                 description:
-                  "Phone: (253) 632-2310\nEmail: info@alhudakent.org",
+                  "Phone: (253) 508-0677\nEmail: info@alhudakent.com",
                 icon: Phone,
               },
               {
