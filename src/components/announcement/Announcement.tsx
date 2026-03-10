@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import {
   Megaphone,
   Clock,
@@ -18,9 +19,6 @@ const checkDST = (date = new Date()) => {
   return date.getTimezoneOffset() < jan.getTimezoneOffset();
 };
 
-const jummahSchedule = checkDST() ? JUMMAH_SCHEDULE.dst : JUMMAH_SCHEDULE.standard;
-
-// Define interfaces for type safety
 interface Alert {
   message: string;
 }
@@ -58,6 +56,14 @@ interface Announcement {
 }
 
 const Announcement: React.FC = () => {
+  const [isDST, setIsDST] = useState(false);
+
+  useEffect(() => {
+    setIsDST(checkDST());
+  }, []);
+
+  const jummahSchedule = isDST ? JUMMAH_SCHEDULE.dst : JUMMAH_SCHEDULE.standard;
+
   const announcements: Announcement[] = [
     {
       id: 1,
@@ -84,15 +90,6 @@ const Announcement: React.FC = () => {
           time: "9:00 AM - 1:00 PM",
           levels: ["All Ages"],
         },
-        // {
-        //   name: "Islamic Studies",
-        //   time: "10:45 AM - 11:45 AM",
-        //   topics: ["Aqeedah", "Fiqh", "Seerah"],
-        // },
-        // {
-        //   name: "Arabic Language",
-        //   time: "12:00 PM - 1:00 PM",
-        // },
       ],
     },
     {
@@ -106,25 +103,8 @@ const Announcement: React.FC = () => {
         taraweeh: "8:50 PM",
         tahajud: "3:30 AM",
       },
-      // additionalInfo:
-      //   "Please bring your prayer mats. Light breakfast will be served after each prayer.",
       type: "ramadan",
     },
-    // {
-    //   id: 4,
-    //   title: "Eid ul-Fitr 2025 Prayer Times",
-    //   subtitle: "Eid Mubarak",
-    //   date: "March 31st, 2025",
-    //   description: "May Allah accept our fasts, prayers, and good deeds.",
-    //   times: ["7:30 AM", "9:00 AM"],
-    //   location: "Alhuda Mosque",
-    //   additionalInfo: [
-    //     "Please arrive 30 minutes before prayer time",
-    //     "Bring your own prayer mat",
-    //     "Takbeer will start 15 minutes before prayer",
-    //   ],
-    //   type: "eid",
-    // },
   ];
 
   const renderPrayerTimes = (announcement: Announcement) => {
