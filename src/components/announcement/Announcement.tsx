@@ -8,6 +8,18 @@ import {
   BookOpen,
 } from "lucide-react";
 
+const JUMMAH_SCHEDULE = {
+  standard: { first: "12:45 PM", second: "1:30 PM" },
+  dst: { first: "1:30 PM", second: "2:30 PM" },
+};
+
+const checkDST = (date = new Date()) => {
+  const jan = new Date(date.getFullYear(), 0, 1);
+  return date.getTimezoneOffset() < jan.getTimezoneOffset();
+};
+
+const jummahSchedule = checkDST() ? JUMMAH_SCHEDULE.dst : JUMMAH_SCHEDULE.standard;
+
 // Define interfaces for type safety
 interface Alert {
   message: string;
@@ -50,11 +62,11 @@ const Announcement: React.FC = () => {
     {
       id: 1,
       title: "Friday Prayer Times",
-      times: ["12:45 PM", "1:30 PM"],
-      alert: {
-        message:
-          "Due to Daylight Saving Time, all prayer times will be forward by one hour starting March 8th 2026",
-      },
+      times: [jummahSchedule.first, jummahSchedule.second],
+      // alert: {
+      //   message:
+      //     "Due to Daylight Saving Time, all prayer times will be forward by one hour starting March 8th 2026",
+      // },
       type: "regular",
     },
     {
@@ -69,7 +81,7 @@ const Announcement: React.FC = () => {
       programs: [
         {
           name: "Quran Memorization",
-          time: "9:00 AM - 10:30 AM",
+          time: "9:00 AM - 1:00 PM",
           levels: ["All Ages"],
         },
         // {
@@ -91,8 +103,8 @@ const Announcement: React.FC = () => {
       description:
         "May this blessed month bring peace, prosperity and happiness to all.",
       times: {
-        taraweeh: "7:40 PM",
-        tahajud: "1:00 AM",
+        taraweeh: "8:50 PM",
+        tahajud: "3:30 AM",
       },
       // additionalInfo:
       //   "Please bring your prayer mats. Light breakfast will be served after each prayer.",

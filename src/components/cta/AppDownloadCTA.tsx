@@ -71,8 +71,9 @@ const AppDownloadCTA = () => {
                     <path d="M3.18 23.76c.3.17.65.19.97.07l12.45-7.19-2.78-2.78-10.64 9.9zM.29 1.5C.11 1.83 0 2.22 0 2.67v18.66c0 .45.11.84.29 1.17l.06.06 10.45-10.45v-.25L.35 1.44l-.06.06zM20.93 10.4l-2.81-1.62-3.11 3.11 3.11 3.11 2.83-1.63c.81-.47.81-1.5-.02-1.97zM3.18.24l12.45 7.19-2.78 2.78L2.21.31c.32-.12.67-.1.97-.07z" />
                   </svg>
                   <div>
-                    <div className="text-xs opacity-75">Get it on</div>
-                    <div className="text-sm font-semibold">Google Play</div>
+                    {/* <div className="text-xs opacity-75">Get it on</div> */}
+                    <div className="text-xs opacity-75">Android</div>
+                    <div className="text-sm font-semibold">Coming Soon</div>
                   </div>
                 </a>
               </div>

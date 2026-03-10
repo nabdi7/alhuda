@@ -21,12 +21,28 @@ interface AlAdhanResponse {
   };
 }
 
+const JUMMAH_SCHEDULE = {
+  standard: { first: "12:45 PM", second: "1:30 PM" },
+  dst: { first: "1:30 PM", second: "2:30 PM" },
+};
+
+const checkDST = (date = new Date()) => {
+  const jan = new Date(date.getFullYear(), 0, 1);
+  return date.getTimezoneOffset() < jan.getTimezoneOffset();
+};
+
 const PrayerTimes = () => {
   const [prayerTimes, setPrayerTimes] = useState<PrayerTime[]>([]);
-  const [fridayPrayers, setFridayPrayers] = useState<PrayerTime[]>([]);
   const [currentDate, setCurrentDate] = useState(new Date());
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [isDST, setIsDST] = useState(false);
+
+  const jummahSchedule = isDST ? JUMMAH_SCHEDULE.dst : JUMMAH_SCHEDULE.standard;
+
+  useEffect(() => {
+    setIsDST(checkDST());
+  }, []);
 
   useEffect(() => {
     const fetchPrayerTimes = async () => {
@@ -37,7 +53,7 @@ const PrayerTimes = () => {
         const currentTimestamp = Math.floor(currentDate.getTime() / 1000);
 
         const response = await fetch(
-          `https://api.aladhan.com/v1/timings/${currentTimestamp}?latitude=${latitude}&longitude=${longitude}&method=${method}`
+          `https://api.aladhan.com/v1/timings/${currentTimestamp}?latitude=${latitude}&longitude=${longitude}&method=${method}`,
         );
 
         if (!response.ok) {
@@ -63,13 +79,7 @@ const PrayerTimes = () => {
           { name: "Isha", time: formatTime(data.data.timings.Isha) },
         ];
 
-        const fridayPrayers = [
-          { name: "Jumu'ah", time: "1:00 PM" },
-          { name: "Jumu'ah", time: "2:00 PM" },
-        ];
-
         setPrayerTimes(times);
-        setFridayPrayers(fridayPrayers);
         setLoading(false);
       } catch (err) {
         console.error("Error fetching prayer times:", err);
@@ -224,13 +234,13 @@ const PrayerTimes = () => {
                     })}
                   </div>
 
-                  {fridayPrayers.length > 0 && (
-                    <div className="mt-6 bg-green-50 rounded-xl p-4 shadow-md">
-                      <h3 className="text-lg font-semibold text-green-700 mb-2">
-                        Friday Prayers
-                      </h3>
-                      <div className="space-y-3">
-                        {fridayPrayers.map((prayer, index) => (
+                  <div className="mt-6 bg-green-50 rounded-xl p-4 shadow-md">
+                    <h3 className="text-lg font-semibold text-green-700 mb-2">
+                      Friday Prayers
+                    </h3>
+                    <div className="space-y-3">
+                      {[jummahSchedule.first, jummahSchedule.second].map(
+                        (time, index) => (
                           <div
                             key={index}
                             className="flex items-center justify-between"
@@ -241,13 +251,13 @@ const PrayerTimes = () => {
                               </h4>
                             </div>
                             <p className="text-xl font-bold text-green-600">
-                              {prayer.time}
+                              {time}
                             </p>
                           </div>
-                        ))}
-                      </div>
+                        ),
+                      )}
                     </div>
-                  )}
+                  </div>
                 </div>
               )}
             </div>

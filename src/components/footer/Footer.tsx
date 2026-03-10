@@ -131,7 +131,7 @@ const Footer = () => {
             reserved.
           </p>
           {/* made by */}
-          <p className="text-center text-gray-500">
+          {/* <p className="text-center text-gray-500">
             Made by{" "}
             <a
               href="https://www.qdwebdesigns.com"
@@ -139,7 +139,7 @@ const Footer = () => {
             >
               QD Web Designs
             </a>
-          </p>
+          </p> */}
         </div>
       </div>
     </footer>
