@@ -70,13 +70,14 @@ export default function AdminPage() {
 
       {/* Sidebar */}
       <aside
-        className={`
-          fixed inset-y-0 left-0 z-50 w-56 bg-green-900 flex-shrink-0 flex flex-col min-h-screen
-          transform transition-transform duration-300
-          ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
-          md:relative md:translate-x-0
-        `}
-      >
+  className={`
+    fixed inset-y-0 left-0 z-50 w-56 bg-green-900 flex-shrink-0 flex flex-col min-h-screen
+    overflow-y-auto
+    transform transition-transform duration-300
+    ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
+    md:relative md:translate-x-0
+  `}
+>
         {/* Logo */}
         <div className="px-5 py-6 border-b border-white/10">
           <div className="flex items-center gap-3">
@@ -142,7 +143,7 @@ export default function AdminPage() {
       </aside>
 
       {/* Main content */}
-      <main className="flex-1 flex flex-col min-h-screen overflow-auto">
+      <main className="flex-1 flex flex-col min-h-screen overflow-y-auto">
         {/* Mobile top bar */}
         <div className="md:hidden bg-green-900 px-4 py-3 flex items-center justify-between flex-shrink-0">
           <div className="flex items-center gap-3">
