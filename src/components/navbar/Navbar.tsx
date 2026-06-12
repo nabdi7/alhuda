@@ -4,9 +4,13 @@ import { Menu as MenuIcon, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import MobileMenu from "../menu/Menu";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+
+  if (pathname === "/admin" || pathname === "/login") return null;
 
   const pages = [
     { name: "About Us", href: "/about" },

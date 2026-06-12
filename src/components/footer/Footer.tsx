@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import {
@@ -9,8 +10,13 @@ import {
   Youtube,
 } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+  const pathname = usePathname();
+
+  if (pathname === "/admin" || pathname === "/login") return null;
+
   const usefulLinks = [
     { name: "Prayer Times", href: "/prayer" },
     { name: "Events Calendar", href: "/events" },
@@ -126,20 +132,18 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t mt-12 pt-8">
-          <p className="text-center  text-gray-500">
+          <p className="text-center text-gray-500">
             © {new Date().getFullYear()} Alhuda Islamic Center. All rights
             reserved.
           </p>
-          {/* made by */}
-          {/* <p className="text-center text-gray-500">
-            Made by{" "}
-            <a
-              href="https://www.qdwebdesigns.com"
-              className="text-green-600 hover:underline"
+          <div className="text-center mt-2">
+            <Link
+              href="/admin"
+              className="text-gray-500 hover:text-green-600 text-sm"
             >
-              QD Web Designs
-            </a>
-          </p> */}
+              Admin
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

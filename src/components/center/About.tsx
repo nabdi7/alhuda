@@ -109,6 +109,7 @@ const About = () => {
                   width={400}
                   height={400}
                   alt="Mosque History"
+                  priority
                   className="w-full h-full object-cover"
                 />
               </div>

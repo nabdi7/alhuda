@@ -39,6 +39,7 @@ const AboutUs = () => {
                 width={400}
                 height={400}
                 alt="Mosque Community"
+                priority
                 className="w-full h-full object-cover"
               />
             </div>

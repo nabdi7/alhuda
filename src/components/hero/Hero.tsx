@@ -10,8 +10,8 @@ const Hero = () => {
         <Image
           src="/front.jpeg"
           alt="Mosque Background"
-          layout="fill"
-          objectFit="cover"
+          fill
+          className="object-cover"
           quality={90}
         />
         <div className="absolute inset-0 bg-black opacity-60"></div>
