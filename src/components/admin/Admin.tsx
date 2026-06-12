@@ -70,14 +70,13 @@ export default function AdminPage() {
 
       {/* Sidebar */}
       <aside
-  className={`
-    fixed inset-y-0 left-0 z-50 w-56 bg-green-900 flex-shrink-0 flex flex-col min-h-screen
-    overflow-y-auto
+        className={`
+    fixed inset-y-0 left-0 z-50 w-56 bg-green-900 flex-shrink-0 flex flex-col
     transform transition-transform duration-300
     ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
     md:relative md:translate-x-0
   `}
->
+      >
         {/* Logo */}
         <div className="px-5 py-6 border-b border-white/10">
           <div className="flex items-center gap-3">
@@ -94,7 +93,7 @@ export default function AdminPage() {
         </div>
 
         {/* Nav */}
-        <nav className="flex-1 px-3 py-4 space-y-1">
+        <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
           {TABS.map((tab) => (
             <button
               key={tab.id}
@@ -112,7 +111,7 @@ export default function AdminPage() {
         </nav>
 
         {/* User */}
-        <div className="px-4 py-4 border-t border-white/10">
+        <div className="px-4 py-4 border-t border-white/10 flex-shrink-0">
           <div className="flex items-center gap-3 mb-3">
             <div className="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center flex-shrink-0">
               <User className="w-4 h-4 text-white/70" />
